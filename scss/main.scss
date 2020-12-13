@@ -1,13 +1,7 @@
 /* Variables */
-$color-1: #567070; /* rgb(86,112,112) */
-$color-2: #4D342C; /* rgb(77,52,44) */
-$color-3: #E5E5DD; /* rgb(229,229,221) */
-
-/* Mixins
-@mixin header-fonts {
-  font-family: 'Overpass', sans-serif;
-
-}*/
+$color-1: #567070; /* green rgb(86,112,112) */
+$color-2: #4D342C; /* brown rgb(77,52,44) */
+$color-3: #E5E5DD; /* light rgb(229,229,221) */
 
 /* General Styles */
 * {
@@ -22,19 +16,20 @@ html {
 
 /* HERO SECTION */
 
-.hero {
- height: 100vh;
- background-image: url("../img/jade-rectangle.jpg");
- -webkit-background-size: cover;
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
- display: flex;
- justify-content: center;
- align-items: center;
- position: relative;
- overflow: hidden;
+main.hero {
+  height: 100vh;
+  background-image: url("../img/jade-rectangle.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .hero-img {
   background-image: url("../img/jade-rectangle.jpg");
@@ -44,7 +39,7 @@ html {
   background-position: center;
   height: 100%;
   width: 100%;
-  filter: blur(3px);
+  filter: blur(5px);
 }
 
 .hero-content {
@@ -55,264 +50,167 @@ html {
   z-index: 100;
   padding: 10px;
   text-align: center;
-  background-color: rgba(229,229,221,0.4);
-  color: $color-3;
-  border: 3px solid $color-2;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 85%;
 
-
   h1, p {
-    font-family: 'Overpass', sans-serif;
-    margin: 0;
-    color: $color-2;
+    color: $color-3;
+    text-shadow: 2px 2px 4px $color-2;
   }
 
   h1 {
+    font-family: 'Overpass', sans-serif;
     font-size: 38px;
     width: 100%;
   }
 
   p {
-    font-size: 16px;
-    width: 95%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    width: 90%;
     text-align: center;
     line-height: 24px;
   }
 
   a {
-    display: inline-block;
-    padding: 10px;
-    border: 2px solid $color-2;
+    padding: 10px 5px;
+    border: 3px ridge $color-3;
     font-size: 16px;
     text-decoration: none;
     font-weight: bold;
-    color: $color-2;
+    color: $color-3;
+    text-shadow: 2px 2px 4px $color-2;
     margin-top: 15px;
     font-family: 'Roboto', sans-serif;
-    width: 60%;
+    width: 51%;
+    text-transform: uppercase;
   }
 }
 
 
-/* HEADER
-header {
-  width: 100%;
-  background-color: $color-3;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+/* HEADER */
 
-  h1 {
-    width: 100%;
-    text-align: center;
-    color: $color-2;
-    padding: 15px 0 10px 0;
-    font-family: 'Overpass', sans-serif;
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $color-2;
+  padding: 10px;
+
+  li {
+    list-style-type: none;
 
     a {
       text-decoration: none;
-      color: $color-2;
-    }
-  }
-
-  .divider {
-    width: 80%;
-    border-bottom: 1px solid $color-2;
-  }
-
-  nav {
-    width: 100%;
-
-    ul {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 10px 0;
+      color: $color-3;
       font-family: 'Roboto', sans-serif;
-
-      li {
-        list-style-type: none;
-        color: $color-2;
-      }
-    }
-  }
-}*/
-
-
-
-/* PRODUCTS */
-
-header.products {
-  background-color: $color-3;
-
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: $color-3;
-
-    li {
-      list-style-type: none;
-
-      a {
-        text-decoration: none;
-        color: $color-2;
-      }
-    }
-  }
-
-  .title {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    h1 {
-      text-align: center;
-      padding: 20px 0;
-      font-family: 'Overpass', sans-serif;
-      font-size: 32px;
-      width: 80%;
-      color: $color-2;
-    }
-
-    p {
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-      font-size: 18px;
-      width: 80%;
-      color: $color-2;
+      text-transform: uppercase;
+      font-weight: 100;
     }
   }
 }
 
-.product-list {
+/* Footer */
+
+footer {
+  background-color: $color-3;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 20px;
 
-  h3, p {
-    text-align: left;
-    background-color: $color-3;
-    color: $color-2;
+  .form {
+
+    h3 {
+      width: 100%;
+      text-align: left;
+      font-family: 'Overpass', sans-serif;
+      color: $color-2;
+      font-size: 24px;
+    }
+
+    p {
+      width: 100%;
+      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      color: $color-2;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 300;
+      padding-bottom: 10px;
+    }
+
+    input[type=text] {
+    box-sizing: border-box;
+    width: 100%;
+    color: #9d9ea4;
+    font-style: italic;
+    padding: 15px;
+    }
   }
 
-  h3 {
-    padding-bottom: 15px;
-  }
+  .contact {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-  p {
-    padding-bottom: 50px;
-  }
-
-  .product-img, .product-info {
-    width: 80%;
-  }
-
-  .product-img {
-    padding-top: 50px;
-  }
-
-}
-
-
-/* Tag-Line */
-.tag-line {
- height: 100vh;
- position: relative;
- overflow: hidden;
-}
-
-.tag-line-img {
-  background-image: url("../img/white-full.jpg");
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  filter: blur(3px);
-  /*background-attachment: fixed;*/
-}
-
-.tag-line-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(69,60,54,0.3);
-  color: white;
-  border: 3px solid white;
-  width: 80%;
-
-  h2 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 22px;
-    margin: 0;
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      font-size: 18px;
+      color: $color-2;
+      padding: 5px 10px;
+    }
   }
 }
-
 
 /* MISSION */
 
-header.mission {
-  background-image: url("../img/white-full.jpg");
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
+.mission {
 
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: $color-3;
-
-    li {
-      list-style-type: none;
-
-      a {
-        text-decoration: none;
-        color: $color-2;
-      }
-    }
+  .chair-1 {
+    background-image: url("../img/white-full.jpg");
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
   }
 
-
-  .title {
-    height: 100vh;
-    width: 100%;
+  .mission-content {
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    h1 {
-      text-align: center;
-      padding: 20px 0;
-      font-family: 'Overpass', sans-serif;
-      font-size: 32px;
-      background-color: $color-3;
-      width: 80%;
+    & p::first-line {
+      font-size: 125%;
+      font-weight: 500;
+    }
+
+    p {
+      width: 100%;
+      text-align: left;
+      padding: 10px 10px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
       color: $color-2;
     }
   }
-}
 
-
-.mission-info {
-  .red-chair {
+  .chair-2 {
     background-image: url("../img/red-pattern-rectangle.jpg");
     height: 100vh;
     -webkit-background-size: cover;
@@ -322,7 +220,48 @@ header.mission {
     width: 100%;
   }
 
-  .green-chair {
+  .call-to-action {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h2 {
+      text-align: center;
+      font-family: 'Overpass', sans-serif;
+      font-size: 24px;
+      width: 100%;
+      color: $color-2;
+      padding: 20px 10px 10px 10px;
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-2;
+      padding: 0px 10px 10px 10px;
+    }
+
+    a {
+      padding: 10px 5px;
+      border: 2px ridge $color-2;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      color: $color-2;
+      margin: 20px 0;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      width: 50%;
+      text-transform: uppercase;
+    }
+  }
+
+  .chair-3 {
     background-image: url("../img/green-pattern-rectangle.jpg");
     height: 100vh;
     -webkit-background-size: cover;
@@ -331,190 +270,149 @@ header.mission {
     background-position: center;
     width: 100%;
   }
-
-  .text {
-    padding: 15px;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    text-align: center;
-    padding-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    line-height: 27px;
-    color: $color-2;
-  }
-}
-
-/* Footer */
-footer {
-  background-color: $color-2;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 50vh;
-
-  h2 {
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-    font-family: 'Overpass', sans-serif;
-    color: $color-3;
-
-  }
-
-  p.email, p.phone {
-    width: 100%;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    padding: 5px 0;
-    font-size: 18px;
-    color: $color-3;
-
-    i {
-      font-size: 18px;
-      color: $color-3;
-    }
-  }
-
-  .socials {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 50px 0;
-
-    i {
-      font-size: 24px;
-      color: $color-3;
-    }
-
-  }
 }
 
 
 /* PRODUCTS */
 
-/*.products {
-  background-color: $color-3;
-  padding: 0 10px;
+main .products {
+  padding: 50px 20px;
+
+  h2 {
+    text-align: left;
+    font-family: 'Overpass', sans-serif;
+    font-size: 24px;
+    color: $color-2;
+    font-weight: 600;
+    padding-bottom: 50px;
+  }
+
+  h6.subtitle {
+    position: relative;
+    z-index: 1;
+    color: $color-2;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+
+    &:before {
+      border-top: 1px solid rgba(77, 52 ,44, 0.5);
+       content:"";
+       margin: 0 auto;
+       /* this centers the line to the full width specified */
+       position: absolute;
+       /* positioning must be absolute here, and relative positioning must be applied to the parent */
+       top: 50%; left: 0; right: 0; bottom: 0;
+       width: 95%;
+       z-index: -1;
+    }
+
+    span {
+      background: $color-3;
+      padding-right: 5px;
+    }
+  }
 }
 
-.product-header {
-  width: 100%;
-  text-align: center;
 
-   h3 {
-     padding: 50px 0 15px 0;
-   }
-
-   p{
-     padding-bottom: 50px;
-   }
-}
 
 .product-list {
   display: grid;
   grid-template-columns: 1fr 100px 100px 1fr;
 
-  h3, p {
-    text-align: center;
-    background-color: white;
-  }
-}
-
-.playa-img {
-  grid-column: 1 / 4;
-  width: 100%;
-}
-
-.playa-info {
-  grid-column: 1 / 4;
-}
-
-.urbe-green-img {
-  grid-column: 2 / -1;
-  width: 100%;
-}
-
-.urbe-green-info {
-  grid-column: 2 / -1;
-}
-
-.urbe-red-img{
-  grid-column: 1 / 4;
-  width: 100%;
-}
-
-.urbe-red-info {
-  grid-column: 1 / 4;
-}
 
 .campo-img {
-  grid-column: 2 / -1;
+  padding-top: 20px;
+  grid-column: 1 / 5;
   width: 100%;
 }
 
 .campo-info {
-  grid-column: 2 / -1;
-}
+  grid-column: 1 / 5;
 
-
-/* HERO SECTION
-
-.hero {
- height: 100vh;
- position: relative;
- overflow: hidden;
-}
-
-.hero-img {
-  background-image: url("../img/jade-rectangle.jpg");
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-  filter: blur(0px);
-}
-
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(77,52,44,0.5);
-  color: $color-3;
-  border: 3px solid $color-3;
-  width: 80%;
-
-  h1, h2 {
+  h3 {
+    text-align: left;
     font-family: 'Overpass', sans-serif;
-    font-size: 38px;
-    margin: 0;
-    color: $color-3;
+    font-size: 24px;
+    color: $color-2;
   }
 
-  h2 {
-    font-size: 22px;
-  }
-
-  a {
-    display: inline-block;
-    padding: 10px;
-    border: 2px solid $color-3;
-    font-size: 18px;
-    text-decoration: none;
-    color: $color-3;
-    margin-top: 15px;
+  p {
+    text-align: left;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    color: $color-2;
   }
-}*/
+
+}
+
+.playa-img {
+  padding-top: 50px;
+  grid-column: 1 / 5;
+  width: 100%;
+}
+
+.playa-info {
+  grid-column: 1 / 5;
+
+  h3 {
+    text-align: left;
+    font-family: 'Overpass', sans-serif;
+    font-size: 24px;
+    color: $color-2;
+  }
+
+  p {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $color-2;
+  }
+}
+
+.urbe-green-img {
+  padding-top: 50px;
+  grid-column: 1 / 5;
+  width: 100%;
+}
+
+.urbe-green-info {
+  grid-column: 1 / 5;
+  h3 {
+    text-align: left;
+    font-family: 'Overpass', sans-serif;
+    font-size: 24px;
+    color: $color-2;
+  }
+
+  p {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $color-2;
+  }
+}
+
+.urbe-red-img {
+  padding-top: 50px;
+  grid-column: 1 / 5;
+  width: 100%;
+}
+
+.urbe-red-info {
+  grid-column: 1 / 5;
+  h3 {
+    text-align: left;
+    font-family: 'Overpass', sans-serif;
+    font-size: 24px;
+    color: $color-2;
+  }
+
+  p {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $color-2;
+  }
+}
+}
