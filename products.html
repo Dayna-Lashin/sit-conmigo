@@ -22,66 +22,84 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">home</a>
-        </li>
-        <li>
-          <a href="mission.html">about</a>
-        </li>
-        <li>
-          <a href="products.html">chairs</a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <div class="title">
+          <h1>
+            <a href="index.html">Sit Conmigo</a>
+          </h1>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="mission.html">about</a>
+          </li>
+          <li>
+           <a href="products.html">chairs</a>
+          </li>
+          <li>
+           <a href="products.html">home</a>
+          </li>
+        </ul>
+        <div class="menu-btn">
+          <div class="menu-btn_burger"></div>
+        </div>
+      </nav>
+    </header>
 
     <main>
       <section class="products">
-        <h2>
-         Be Kind to humanity and the environment, one seat at a time.
-        </h2>
-        <h6 class="subtitle">
-          <span>Our Chairs</span>
-        </h6>
+        <p class="tag-line">
+          Be Kind to humanity and the environment, one seat at a time.
+        </p>
+        <p class="subtitle">
+          <span>Chairs</span>
+        </p>
 
         <div class="product-list">
-
-          <img class="product-img campo-img" src="../img/jade.jpg" alt="Campo Chair"/>
+          <a href="index.html" class="campo-img">
+            <img class="product-img" src="../img/jade.jpg" alt="Campo Chair"/>
+          </a>
           <div class="product-info campo-info">
-            <h3 class="product-name">Campo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, sapiente magnam quo, vitae nam deserunt.</p>
+            <h2 class="product-name">Campo</h2>
+            <p>$150</p>
           </div>
 
-          <img class="product-img playa-img" src="../img/white.jpg" alt="playa chair"/>
+          <a href="index.html" class="playa-img">
+            <img class="product-img" src="../img/white.jpg" alt="playa chair"/>
+          </a>
           <div class="product-info playa-info">
-            <h3 class="product-name">Playa</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, sapiente magnam quo, vitae nam deserunt.</p>
+            <h2 class="product-name">Playa</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
 
-          <img class="product-img urbe-green-img" src="../img/green-pattern.jpg" alt="Urbe Green Chair"/>
+          <a href="index.html" class="urbe-green-img">
+            <img class="product-img" src="../img/green-pattern.jpg" alt="Urbe Green Chair"/>
+          </a>
           <div class="product-info urbe-green-info">
-            <h3 class="product-name">Urbe Green</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, sapiente magnam quo, vitae nam deserunt.</p>
+            <h2 class="product-name">Urbe Green</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
 
-          <img class="product-img urbe-red-img" src="../img/red-pattern.jpg" alt="Urbe Red Chair"/>
+          <a href="index.html" class="urbe-red-img">
+            <img class="product-img" src="../img/red-pattern.jpg" alt="Urbe Red Chair"/>
+          </a>
           <div class="product-info urbe-red-info">
-            <h3 class="product-name">Urbe Red</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, sapiente magnam quo, vitae nam deserunt.</p>
+            <h2 class="product-name">Urbe Red</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
-
-
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="form">
+
+      <form action="" method="get">
         <h3>Join The Community</h3>
         <p>Receive our monthly newsletter with the latest products, tips for sustainable living, and more!</p>
-        <input type="text" name="name" value="name@email.com">
-      </div>
+        <input type="text" name="name" value="name@email.com" required>
+        <input type="submit" name="subscribe" value="Subscribe">
+      </form>
 
       <div class="contact">
         <p class="icons">
@@ -89,9 +107,10 @@
           <i class="fab fa-instagram"></i>
           <i class="fab fa-twitter"></i>
           <i class="far fa-envelope"></i>
-          <i class="fas fa-phone"></i>
         </p>
       </div>
+
     </footer>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
