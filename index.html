@@ -1,44 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sit Conmigo</title>
+  <title>Sit Conmigo</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/svg" href="img/sit-conmigo.svg">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/svg" href="img/sit-conmigo.svg">
 
-    <!-- FontAwesome CDN version 5.5 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- FontAwesome CDN version 5.5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;600;700;800;900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- My Stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
+  <!-- My Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
   </head>
 
-
-
   <body>
-    <main class="hero">
-      <div class=hero-img></div>
-      <div class="hero-content">
-        <h1>Sit Conmigo</h1>
-        <p>
-          More than a conversation piece,<br />
-          it's a humanitarian piece.
-        </p>
-        <a href="products.html">
-          pre-order
-        </a>
-        <a href="mission.html">
-          learn more
-        </a>
-      </div>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">Our Story</a>
+          </li>
+          <li>
+           <a href="products.html">The Chairs</a>
+          </li>
+          <li>
+           <a href="index.html">Contact Us</a>
+          </li>
+        </ul>
+        <div class="menu-btn">
+          <div class="menu-btn_burger"></div>
+        </div>
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/sit-conmigo.svg" alt="sit conmigo logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class=hero-img></div>
+        <div class="hero-content">
+          <h1>
+            Sit Conmigo
+          </h1>
+          <p>
+            More than a conversation piece,<br />
+            it's a humanitarian piece.
+          </p>
+        </div>
+      </section>
+      <section class="mission">
+        <div class="mission-content" id="parallax">
+          <h2>
+            Sustainable &amp; Ethical
+          </h2>
+          <p>
+            <span>Our Mission</span><br />
+            is to create chairs that are trendy, stylish, and best of all, comfy! Every Sit Conmigo chair is made with only sustainable, fair-trade materials.
+          </p>
+          <p>
+            <span>We're Committed</span><br />
+            to promoting fair labor practices that ensure our employees have safe working conditions and are paid fairly for their skills.
+          </p>
+          <p>
+            <span>The result</span><br />
+            is a chair that you will not only love in your home or office but a chair that was lovingly made by the person building it.
+          </p>
+        </div>
+      </section>
+      <section class="img-2"></section>
+      <section>
+        <div class="call-to-action">
+            <h2>
+              Be part of the Sit Conmigo movement
+            </h2>
+            <p>
+              Pre-order your stylish, sustainably-built chair today!
+            </p>
+            <a class="pre-order" href="products.html">
+              pre-order
+            </a>
+        </div>
+      </section>
+      <section class="img-3"></section>
     </main>
+
+    <footer>
+      <form action="" method="get">
+        <h3>Join The Community</h3>
+        <p>Receive our monthly newsletter with the latest products, tips for sustainable living, and more!</p>
+        <input type="text" name="name" value="name@email.com" required>
+        <input type="submit" name="subscribe" value="Subscribe">
+      </form>
+
+      <div class="contact">
+        <p class="icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="far fa-envelope"></i>
+        </p>
+      </div>
+
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
