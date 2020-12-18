@@ -26,11 +26,22 @@ nav {
   align-items: center;
   height: 10vh;
   background-color:rgba(238,238,232,0.9);
+  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
+
+  .logo {
+    margin-left: 15px;
+    padding: 5px;
+    text-align: center;
+
+    img {
+      width: 50%;
+    }
+  }
 
   .nav-links {
-    width: 45%;
+    width: 30%;
     position: absolute;
-    left: 0px;
+    right: 0px;
     height: 25vh;
     top: 10vh;
     background-color: $color-3;
@@ -38,10 +49,12 @@ nav {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    border-radius: 0 0 5px 5px;
-    z-index: 200;
+    border-radius: 0 0 0 5px;
+    z-index: 300;
+    border-left: 1px solid rgba(134, 99, 29, 0.1);
+    border-bottom: 1px solid rgba(134, 99, 29, 0.1);
 
     li {
       opacity: 0;
@@ -53,14 +66,10 @@ nav {
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
         text-align: right;
+        text-transform: uppercase;
         margin-left: 20px;
       }
     }
-  }
-
-  .logo {
-    margin-right: 25px;
-    width: 5%;
   }
 
   .menu-btn {
@@ -72,7 +81,7 @@ nav {
   height: 50px;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  margin-left: 10px;
+  margin-right: 10px;
   }
 
   .menu-btn_burger {
@@ -124,7 +133,7 @@ nav {
   @keyframes navLinkFade {
     from {
       opacity: 0;
-      transform: translateX(-50px);
+      transform: translateX(50px);
     }
 
     to {
@@ -165,7 +174,7 @@ section.hero {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 200;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -206,15 +215,6 @@ section.hero {
     align-items: center;
     flex-wrap: wrap;
 
-    h2 {
-      text-align: left;
-      font-family: 'Overpass', sans-serif;
-      font-size: 26px;
-      width: 100%;
-      color: $color-2;
-      padding: 10px 10px;
-    }
-
     p {
       width: 100%;
       text-align: left;
@@ -224,7 +224,7 @@ section.hero {
       line-height: 24px;
       color: $color-2;
       background-color: $color-3;
-      border-radius: 3px;
+      border-radius: 5px;
 
       & span {
         font-size: 125%;
@@ -279,7 +279,7 @@ section.hero {
   a {
     padding: 10px 5px;
     border: 2px ridge $color-1;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 16px;
     text-decoration: none;
     font-weight: 700;
@@ -310,13 +310,13 @@ section.hero {
 /* PRODUCTS */
 main .products {
   padding: 50px 20px 40px 20px;
-  border-bottom: 1px solid rgba(134, 99, 29, 0.3);
+  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
 
-  p.tag-line {
+  h2.tag-line {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 26px;
+    line-height: 52px;
     color: $color-2;
     font-weight: 400;
     padding: 0 10px 50px 10px;
@@ -324,7 +324,7 @@ main .products {
 
   p.subtitle {
     position: relative;
-    z-index: 1;
+    z-index: 100;
     color: $color-2;
     font-size: 16px;
     font-weight: 200;
@@ -340,7 +340,7 @@ main .products {
       /* positioning must be absolute here, and relative positioning must be applied to the parent */
       top: 50%; left: 0; right: 0; bottom: 0;
       width: 95%;
-      z-index: -1;
+      z-index: -100;
     }
 
     span {
@@ -359,21 +359,40 @@ main .products {
 
       img {
         width: 100%;
+        border-radius: 5px;
       }
     }
 
     .campo-info {
       grid-column: 1 / 5;
+      padding-left: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
 
-      h2 {
-        text-align: left;
-        font-family: 'Overpass', sans-serif;
-        font-size: 22px;
-        color: $color-2;
+      a {
+        text-decoration: none;
+
+        h3 {
+          text-align: left;
+          font-family: 'Overpass', sans-serif;
+          font-size: 22px;
+          color: $color-2;
+        }
       }
 
-      p {
+      p.price {
+        padding-right: 20px;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        color: $color-1;
+      }
+
+      p.description {
+        padding-top: 10px;
         text-align: left;
+        line-height: 24px;
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
         color: $color-2;
@@ -387,21 +406,40 @@ main .products {
 
       img {
         width: 100%;
+        border-radius: 5px;
       }
     }
 
     .playa-info {
       grid-column: 1 / 5;
+      padding-left: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
 
-      h2 {
-        text-align: left;
-        font-family: 'Overpass', sans-serif;
-        font-size: 22px;
-        color: $color-2;
+      a {
+        text-decoration: none;
+
+        h3 {
+          text-align: left;
+          font-family: 'Overpass', sans-serif;
+          font-size: 22px;
+          color: $color-2;
+        }
       }
 
-      p {
+      p.price {
+        padding-right: 20px;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        color: $color-1;
+      }
+
+      p.description {
+        padding-top: 10px;
         text-align: left;
+        line-height: 24px;
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
         color: $color-2;
@@ -414,21 +452,40 @@ main .products {
 
       img {
         width: 100%;
+        border-radius: 5px;
       }
     }
 
     .urbe-green-info {
       grid-column: 1 / 5;
+      padding-left: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
 
-      h2 {
-        text-align: left;
-        font-family: 'Overpass', sans-serif;
-        font-size: 22px;
-        color: $color-2;
+      a {
+        text-decoration: none;
+
+        h3 {
+          text-align: left;
+          font-family: 'Overpass', sans-serif;
+          font-size: 22px;
+          color: $color-2;
+        }
       }
 
-      p {
+      p.price {
+        padding-right: 20px;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        color: $color-1;
+      }
+
+      p.description {
+        padding-top: 10px;
         text-align: left;
+        line-height: 24px;
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
         color: $color-2;
@@ -438,23 +495,43 @@ main .products {
     a.urbe-red-img {
       padding-top: 50px;
       grid-column: 1 / 5;
+
       img {
         width: 100%;
+        border-radius: 5px;
       }
     }
 
     .urbe-red-info {
       grid-column: 1 / 5;
+      padding-left: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
 
-      h2 {
-        text-align: left;
-        font-family: 'Overpass', sans-serif;
-        font-size: 22px;
-        color: $color-2;
+      a {
+        text-decoration: none;
+
+        h3 {
+          text-align: left;
+          font-family: 'Overpass', sans-serif;
+          font-size: 22px;
+          color: $color-2;
+        }
       }
 
-      p {
+      p.price {
+        padding-right: 20px;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        color: $color-1;
+      }
+
+      p.description {
+        padding-top: 10px;
         text-align: left;
+        line-height: 24px;
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
         color: $color-2;
@@ -463,6 +540,108 @@ main .products {
   }
 }
 
+/* Waitlist */
+main.waitlist {
+  background-color: $color-3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 20px 5px 20px;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+    color: $color-2;
+    font-size: 26px;
+    padding: 25px 0;
+  }
+
+  p {
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: $color-2;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    padding-bottom: 40px;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    label {
+      width: 100%;
+      color: $color-2;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+
+    input[type=text] {
+      box-sizing: border-box;
+      width: 100%;
+      color: $color-3;
+      padding: 10px;
+      border: none;
+      background-color: rgba(134,99,29, 0.3);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    select#chair {
+      box-sizing: border-box;
+      width: 100%;
+      color: $color-3;
+      padding: 15px;
+      border: none;
+      background-color: rgba(134,99,29, 0.3);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    textarea#comments {
+      box-sizing: border-box;
+      width: 100%;
+      color: $color-3;
+      padding: 15px;
+      border: none;
+      background-color: rgba(134,99,29, 0.3);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    input[type=submit] {
+      box-sizing: border-box;
+      color: $color-3;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid $color-1;
+      background-color: $color-1;
+      margin: 5px 5px 20px 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+  }
+}
+
+footer.waitlist {
+  padding: 0;
+
+  p.icons {
+    padding-bottom: 10px;
+  }
+}
 
 
 /* Footer */
@@ -508,17 +687,17 @@ footer {
     background-color: rgba(134,99,29, 0.3);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    border-radius: 3px;
+    border-radius: 5px;
     }
 
     input[type=submit] {
     box-sizing: border-box;
     color: $color-3;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid $color-1;
     background-color: $color-1;
-    margin: 5px 5px 0 0;
+    margin: 5px 5px 5px 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     }

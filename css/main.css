@@ -25,12 +25,21 @@ nav {
   align-items: center;
   height: 10vh;
   background-color: rgba(238, 238, 232, 0.9);
+  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
   /* Animations */
 }
+nav .logo {
+  margin-left: 15px;
+  padding: 5px;
+  text-align: center;
+}
+nav .logo img {
+  width: 50%;
+}
 nav .nav-links {
-  width: 45%;
+  width: 30%;
   position: absolute;
-  left: 0px;
+  right: 0px;
   height: 25vh;
   top: 10vh;
   background-color: #EEEEE8;
@@ -38,10 +47,12 @@ nav .nav-links {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.5s ease-in;
-  border-radius: 0 0 5px 5px;
-  z-index: 200;
+  border-radius: 0 0 0 5px;
+  z-index: 300;
+  border-left: 1px solid rgba(134, 99, 29, 0.1);
+  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
 }
 nav .nav-links li {
   opacity: 0;
@@ -53,11 +64,8 @@ nav .nav-links li a {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   text-align: right;
+  text-transform: uppercase;
   margin-left: 20px;
-}
-nav .logo {
-  margin-right: 25px;
-  width: 5%;
 }
 nav .menu-btn {
   position: relative;
@@ -68,7 +76,7 @@ nav .menu-btn {
   height: 50px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 nav .menu-btn_burger {
   width: 25px;
@@ -109,7 +117,7 @@ nav .nav-active {
 @keyframes navLinkFade {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -146,7 +154,7 @@ section.hero {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 200;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -181,14 +189,6 @@ section.hero {
   align-items: center;
   flex-wrap: wrap;
 }
-.mission .mission-content h2 {
-  text-align: left;
-  font-family: "Overpass", sans-serif;
-  font-size: 26px;
-  width: 100%;
-  color: #2C2721;
-  padding: 10px 10px;
-}
 .mission .mission-content p {
   width: 100%;
   text-align: left;
@@ -198,7 +198,7 @@ section.hero {
   line-height: 24px;
   color: #2C2721;
   background-color: #EEEEE8;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .mission .mission-content p span {
   font-size: 125%;
@@ -247,7 +247,7 @@ section.hero {
 .call-to-action a {
   padding: 10px 5px;
   border: 2px ridge #86631D;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
   font-weight: 700;
@@ -273,20 +273,20 @@ section.hero {
 /* PRODUCTS */
 main .products {
   padding: 50px 20px 40px 20px;
-  border-bottom: 1px solid rgba(134, 99, 29, 0.3);
+  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
 }
-main .products p.tag-line {
+main .products h2.tag-line {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 26px;
+  line-height: 52px;
   color: #2C2721;
   font-weight: 400;
   padding: 0 10px 50px 10px;
 }
 main .products p.subtitle {
   position: relative;
-  z-index: 1;
+  z-index: 100;
   color: #2C2721;
   font-size: 16px;
   font-weight: 200;
@@ -305,7 +305,7 @@ main .products p.subtitle:before {
   right: 0;
   bottom: 0;
   width: 95%;
-  z-index: -1;
+  z-index: -100;
 }
 main .products p.subtitle span {
   background: #EEEEE8;
@@ -321,18 +321,35 @@ main .products .product-list a.campo-img {
 }
 main .products .product-list a.campo-img img {
   width: 100%;
+  border-radius: 5px;
 }
 main .products .product-list .campo-info {
   grid-column: 1/5;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-main .products .product-list .campo-info h2 {
+main .products .product-list .campo-info a {
+  text-decoration: none;
+}
+main .products .product-list .campo-info a h3 {
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 22px;
   color: #2C2721;
 }
-main .products .product-list .campo-info p {
+main .products .product-list .campo-info p.price {
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #86631D;
+}
+main .products .product-list .campo-info p.description {
+  padding-top: 10px;
   text-align: left;
+  line-height: 24px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   color: #2C2721;
@@ -343,18 +360,35 @@ main .products .product-list a.playa-img {
 }
 main .products .product-list a.playa-img img {
   width: 100%;
+  border-radius: 5px;
 }
 main .products .product-list .playa-info {
   grid-column: 1/5;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-main .products .product-list .playa-info h2 {
+main .products .product-list .playa-info a {
+  text-decoration: none;
+}
+main .products .product-list .playa-info a h3 {
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 22px;
   color: #2C2721;
 }
-main .products .product-list .playa-info p {
+main .products .product-list .playa-info p.price {
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #86631D;
+}
+main .products .product-list .playa-info p.description {
+  padding-top: 10px;
   text-align: left;
+  line-height: 24px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   color: #2C2721;
@@ -365,18 +399,35 @@ main .products .product-list a.urbe-green-img {
 }
 main .products .product-list a.urbe-green-img img {
   width: 100%;
+  border-radius: 5px;
 }
 main .products .product-list .urbe-green-info {
   grid-column: 1/5;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-main .products .product-list .urbe-green-info h2 {
+main .products .product-list .urbe-green-info a {
+  text-decoration: none;
+}
+main .products .product-list .urbe-green-info a h3 {
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 22px;
   color: #2C2721;
 }
-main .products .product-list .urbe-green-info p {
+main .products .product-list .urbe-green-info p.price {
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #86631D;
+}
+main .products .product-list .urbe-green-info p.description {
+  padding-top: 10px;
   text-align: left;
+  line-height: 24px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   color: #2C2721;
@@ -387,21 +438,132 @@ main .products .product-list a.urbe-red-img {
 }
 main .products .product-list a.urbe-red-img img {
   width: 100%;
+  border-radius: 5px;
 }
 main .products .product-list .urbe-red-info {
   grid-column: 1/5;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-main .products .product-list .urbe-red-info h2 {
+main .products .product-list .urbe-red-info a {
+  text-decoration: none;
+}
+main .products .product-list .urbe-red-info a h3 {
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 22px;
   color: #2C2721;
 }
-main .products .product-list .urbe-red-info p {
+main .products .product-list .urbe-red-info p.price {
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #86631D;
+}
+main .products .product-list .urbe-red-info p.description {
+  padding-top: 10px;
   text-align: left;
+  line-height: 24px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   color: #2C2721;
+}
+
+/* Waitlist */
+main.waitlist {
+  background-color: #EEEEE8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 20px 5px 20px;
+}
+main.waitlist h2 {
+  width: 100%;
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  color: #2C2721;
+  font-size: 26px;
+  padding: 25px 0;
+}
+main.waitlist p {
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #2C2721;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  padding-bottom: 40px;
+}
+main.waitlist form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main.waitlist form label {
+  width: 100%;
+  color: #2C2721;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+main.waitlist form input[type=text] {
+  box-sizing: border-box;
+  width: 100%;
+  color: #EEEEE8;
+  padding: 10px;
+  border: none;
+  background-color: rgba(134, 99, 29, 0.3);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+main.waitlist form select#chair {
+  box-sizing: border-box;
+  width: 100%;
+  color: #EEEEE8;
+  padding: 15px;
+  border: none;
+  background-color: rgba(134, 99, 29, 0.3);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+main.waitlist form textarea#comments {
+  box-sizing: border-box;
+  width: 100%;
+  color: #EEEEE8;
+  padding: 15px;
+  border: none;
+  background-color: rgba(134, 99, 29, 0.3);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+main.waitlist form input[type=submit] {
+  box-sizing: border-box;
+  color: #EEEEE8;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #86631D;
+  background-color: #86631D;
+  margin: 5px 5px 20px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+footer.waitlist {
+  padding: 0;
+}
+footer.waitlist p.icons {
+  padding-bottom: 10px;
 }
 
 /* Footer */
@@ -445,16 +607,16 @@ footer form input[type=text] {
   background-color: rgba(134, 99, 29, 0.3);
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 footer form input[type=submit] {
   box-sizing: border-box;
   color: #EEEEE8;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid #86631D;
   background-color: #86631D;
-  margin: 5px 5px 0 0;
+  margin: 5px 5px 5px 0;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
