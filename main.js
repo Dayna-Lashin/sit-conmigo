@@ -1,4 +1,4 @@
-const parallax = document.getElementById("parallax");
+/*const parallax = document.getElementById("parallax");
 
 window.addEventListener("scroll", function( )
 {
@@ -6,7 +6,7 @@ window.addEventListener("scroll", function( )
   console.log("Offset: " + offset);
   parallax.style.backgroundPositionY = offset * 0.7 + "px";
   console.log("Offset: " + offset);
-})
+})*/
 
 
 
