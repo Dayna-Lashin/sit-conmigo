@@ -8,8 +8,7 @@
     <title>Sit Conmigo</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/svg" href="img/sit-conmigo.svg">
-
+    <link rel="shortcut icon" type="image/png" href="img/sit-conmigo-logo-high-res.svg.png"
     <!-- FontAwesome CDN version 5.5 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -24,21 +23,20 @@
   <body>
     <header>
       <nav>
-        <div class="title">
-          <h1>
-            <a href="index.html">Sit Conmigo</a>
-          </h1>
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/sit-conmigo-logo-high-res.png" alt="sit conmigo logo" />
+          </a>
         </div>
-
         <ul class="nav-links">
           <li>
-            <a href="mission.html">about</a>
+            <a href="index.html">Home</a>
           </li>
           <li>
-           <a href="products.html">chairs</a>
+           <a href="products.html">Chairs</a>
           </li>
           <li>
-           <a href="products.html">home</a>
+           <a href="order.html">Pre-order</a>
           </li>
         </ul>
         <div class="menu-btn">
@@ -49,51 +47,67 @@
 
     <main>
       <section class="products">
-        <p class="tag-line">
-          Be Kind to humanity and the environment, one seat at a time.
-        </p>
+        <h2 class="tag-line">
+          Be kind to humanity and the environment, one seat at a time.
+        </h2>
         <p class="subtitle">
           <span>Chairs</span>
         </p>
 
         <div class="product-list">
-          <a href="index.html" class="campo-img">
+
+          <a href="order.html" class="campo-img">
             <img class="product-img" src="../img/jade.jpg" alt="Campo Chair"/>
           </a>
+
           <div class="product-info campo-info">
-            <h2 class="product-name">Campo</h2>
-            <p>$150</p>
+            <a href="order.html">
+              <h3 class="product-name">Campo</h3>
+            </a>
+            <p class="price">&dollar;245</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ratione asperiores odit. Pariatur sequi, soluta.</p>
           </div>
 
-          <a href="index.html" class="playa-img">
+          <a href="order.html" class="playa-img">
             <img class="product-img" src="../img/white.jpg" alt="playa chair"/>
           </a>
+
           <div class="product-info playa-info">
-            <h2 class="product-name">Playa</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="order.html">
+              <h3 class="product-name">Playa</h3>
+            </a>
+            <p class="price">&dollar;245</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ratione asperiores odit. Pariatur sequi, soluta.</p>
           </div>
 
-          <a href="index.html" class="urbe-green-img">
+          <a href="order.html" class="urbe-green-img">
             <img class="product-img" src="../img/green-pattern.jpg" alt="Urbe Green Chair"/>
           </a>
+
           <div class="product-info urbe-green-info">
-            <h2 class="product-name">Urbe Green</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="order.html">
+              <h3 class="product-name">Urbe Green</h3>
+            </a>
+            <p class="price">&dollar;199</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ratione asperiores odit. Pariatur sequi, soluta.</p>
           </div>
 
-          <a href="index.html" class="urbe-red-img">
+          <a href="order.html" class="urbe-red-img">
             <img class="product-img" src="../img/red-pattern.jpg" alt="Urbe Red Chair"/>
           </a>
+
           <div class="product-info urbe-red-info">
-            <h2 class="product-name">Urbe Red</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="order.html">
+              <h3 class="product-name">Urbe Red</h3>
+            </a>
+            <p class="price">&dollar;199</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ratione asperiores odit. Pariatur sequi, soluta.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-
       <form action="" method="get">
         <h3>Join The Community</h3>
         <p>Receive our monthly newsletter with the latest products, tips for sustainable living, and more!</p>
@@ -101,7 +115,7 @@
         <input type="submit" name="subscribe" value="Subscribe">
       </form>
 
-      <div class="contact">
+      <div class="contact" id="contact">
         <p class="icons">
           <i class="fab fa-facebook-f"></i>
           <i class="fab fa-instagram"></i>
@@ -111,6 +125,7 @@
       </div>
 
     </footer>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
