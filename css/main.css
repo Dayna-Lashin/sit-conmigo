@@ -39,6 +39,11 @@ header figure {
     margin: 0.625em 0 0.625em 1.5em;
   }
 }
+@media (min-width: 1024px) {
+  header figure {
+    margin: 0.625em 0 0.625em 2em;
+  }
+}
 header .nav-links {
   width: 40%;
   position: absolute;
@@ -56,11 +61,6 @@ header .nav-links {
   z-index: 300;
   border-left: 1px solid rgba(134, 99, 29, 0.1);
   border-bottom: 1px solid rgba(134, 99, 29, 0.1);
-}
-@media (min-width: 425px) {
-  header .nav-links {
-    width: 30%;
-  }
 }
 @media (min-width: 768px) {
   header .nav-links {
@@ -160,6 +160,7 @@ header .nav-active {
   }
 }
 
+/************ HOME PAGE ************/
 /* HERO SECTION */
 section.hero {
   height: 90vh;
@@ -172,13 +173,18 @@ section.hero {
     font-size: 18px;
   }
 }
+@media (min-width: 1024px) {
+  section.hero {
+    font-size: 24px;
+  }
+}
 
 .hero-img {
   background-image: url("../img/jade-rectangle.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   height: 100%;
   width: 100%;
   filter: blur(3px);
@@ -186,7 +192,7 @@ section.hero {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 200;
@@ -215,32 +221,55 @@ section.hero {
   line-height: 1.5em;
 }
 
-/* MISSION */
-.mission .mission-content {
-  padding: 3em 1.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+/* about */
+.about {
+  min-height: 50vh;
+  padding: 3em 2em;
 }
-@media (min-width: 768px) {
-  .mission .mission-content {
-    padding: 3em;
+@media (min-width: 1024px) {
+  .about {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
-.mission .mission-content p {
+.about .mission-content {
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .about .mission-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.about .mission-content .col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .about .mission-content .col {
+    width: calc(100/3);
+  }
+}
+.about .mission-content .col p {
   text-align: left;
-  padding: 0.625em 0.625em;
+  width: 100%;
   font-family: "Roboto", sans-serif;
-  font-size: 1.125em;
+  font-size: 1em;
   line-height: 1.5em;
   color: #2C2721;
-  background-color: #EEEEE8;
-  border-radius: 5px;
+  padding: 0.625em;
 }
-.mission .mission-content p span {
+@media (min-width: 1024px) {
+  .about .mission-content .col p {
+    width: 80%;
+  }
+}
+.about .mission-content .col p span {
   font-size: 125%;
   font-weight: 700;
   color: #86631D;
@@ -259,45 +288,45 @@ section.hero {
 }
 @media (min-width: 768px) {
   .img-2 {
-    background-image: url("../img/patterned-chairs-full.jpg");
-    background-position: center center;
+    background-image: url("../img/patterned-chairs-full-crop.jpg");
+    background-position: center bottom;
   }
 }
 
 /* CALL TO ACTION SECTION */
 .call-to-action {
-  padding: 2em 1.5em;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .call-to-action {
+    font-size: 18px;
+    min-height: 40vh;
+  }
+}
+.call-to-action .call-to-action-text {
+  max-width: 48ch;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
-  .call-to-action {
-    font-size: 18px;
-  }
-}
-.call-to-action h2 {
+.call-to-action .call-to-action-text h2 {
   text-align: center;
   font-family: "Overpass", sans-serif;
   font-size: 1.625em;
   width: 100%;
   color: #2C2721;
-  padding: 0.625em 0.625em;
 }
-@media (min-width: 768px) {
-  .call-to-action h2 {
-    padding: 0.625em 0.625em 0 0.625em;
-  }
-}
-.call-to-action p {
-  width: 100%;
+.call-to-action .call-to-action-text p {
+  width: 85%;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1.125em;
   line-height: 1.625em;
   color: #2C2721;
-  padding: 0 0.625em 0.625em 0.625em;
 }
 .call-to-action a {
   padding: 0.625em 0.3125em;
@@ -310,8 +339,18 @@ section.hero {
   margin: 0.625em 0 1.25em 0;
   font-family: "Roboto", sans-serif;
   text-align: center;
-  width: 40%;
+  width: 125px;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .call-to-action a {
+    width: 150px;
+  }
+}
+@media (min-width: 1024px) {
+  .call-to-action a {
+    min-width: 215px;
+  }
 }
 
 /* SECOND IMAGE SECTION */
@@ -326,33 +365,52 @@ section.hero {
 }
 @media (min-width: 768px) {
   .img-3 {
-    background-image: url("../img/white.jpg");
+    background-image: url("../img/white-square.jpg");
+    background-position: center center;
   }
 }
 
-/* FORM SECTION */
+/* EMAIL FORM SECTION */
 .email-list {
-  padding: 2em 1.5em;
-}
-.email-list form {
+  min-height: 50vh;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 680px) {
+@media (min-width: 425px) {
+  .email-list {
+    min-height: 40vh;
+  }
+}
+.email-list form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 425px) {
   .email-list form {
+    width: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  .email-list form {
+    width: 80%;
     justify-content: space-between;
-    align-items: flex-end;
   }
 }
 .email-list form .form-text {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-@media (min-width: 680px) {
+@media (min-width: 1024px) {
   .email-list form .form-text {
-    width: 40%;
-    margin-left: 1em;
+    width: 45%;
+    font-size: 18px;
   }
 }
 .email-list form .form-text h3 {
@@ -361,6 +419,11 @@ section.hero {
   font-family: "Overpass", sans-serif;
   color: #2C2721;
   font-size: 1.375em;
+}
+@media (min-width: 1024px) {
+  .email-list form .form-text h3 {
+    margin-left: 2.25em;
+  }
 }
 .email-list form .form-text p {
   width: 100%;
@@ -372,22 +435,25 @@ section.hero {
   font-weight: 300;
   padding-bottom: 0.625em;
 }
-@media (min-width: 680px) {
+@media (min-width: 1024px) {
   .email-list form .form-text p {
-    padding-bottom: 0;
+    margin-left: 3em;
   }
 }
 .email-list form .form-inputs {
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
-@media (min-width: 680px) {
+@media (min-width: 1024px) {
   .email-list form .form-inputs {
     width: 50%;
   }
 }
 .email-list form .form-inputs input[type=text] {
   box-sizing: border-box;
-  width: 95%;
   color: #EEEEE8;
   padding: 1em;
   border: none;
@@ -395,11 +461,11 @@ section.hero {
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   border-radius: 5px;
+  width: 100%;
 }
-@media (min-width: 680px) {
+@media (min-width: 1024px) {
   .email-list form .form-inputs input[type=text] {
-    padding: 0.75em;
-    font-size: 0.89em;
+    width: 90%;
   }
 }
 .email-list form .form-inputs input[type=submit] {
@@ -407,24 +473,17 @@ section.hero {
   color: #2C2721;
   padding: 0.25em 0.5em;
   border-radius: 5px;
-  border: 1px solid #2C2721;
+  border: 0.5px solid #2C2721;
   background-color: #EEEEE8;
   margin: 0.3125em 0 0 0;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-weight: 500;
 }
-@media (min-width: 680px) {
-  .email-list form .form-inputs input[type=submit] {
-    font-size: 0.89em;
-    margin-bottom: 0;
-  }
-}
 
 /* PRODUCTS */
 main .products {
   padding: 3.125em 1.25em 0 1.25em;
-  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,30 +491,19 @@ main .products {
 }
 @media (min-width: 768px) {
   main .products {
+    padding: 3.125em 0.5em 1.25em 0.5em;
     font-size: 18px;
-    padding: 3.125em 1.25em 3.125em 1.25em;
-  }
-}
-@media (min-width: 1024px) {
-  main .products {
-    justify-content: space-around;
-    border-bottom: none;
   }
 }
 main .products h2.tag-line {
-  width: 100%;
+  max-width: 35ch;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1.625em;
   line-height: 1.5em;
   color: #2C2721;
   font-weight: 400;
-  padding: 0 0.625em 3.125em 0.625em;
-}
-@media (min-width: 768px) {
-  main .products h2.tag-line {
-    width: 80%;
-  }
+  padding: 0 0.625em 2em 0.625em;
 }
 main .products p.subtitle {
   position: relative;
@@ -467,6 +515,17 @@ main .products p.subtitle {
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   width: 100%;
+  padding: 0 1em;
+}
+@media (min-width: 768px) {
+  main .products p.subtitle {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  main .products p.subtitle {
+    width: 85%;
+  }
 }
 main .products p.subtitle:before {
   border-top: 1px solid rgba(134, 99, 29, 0.3);
@@ -492,71 +551,72 @@ main .products .product-list {
   align-items: center;
   flex-wrap: wrap;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   main .products .product-list {
-    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 16px;
   }
 }
-main .products .product-list figure {
-  width: 100%;
-  padding-top: 1.25em;
+main .products .product-list .chair-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  main .products .product-list figure {
-    width: 60%;
+  main .products .product-list .chair-wrapper {
+    width: 45%;
+    padding: 1em;
   }
+}
+main .products .product-list .chair-wrapper figure {
+  width: 90%;
+  padding-top: 1.25em;
 }
 @media (min-width: 1024px) {
-  main .products .product-list figure {
-    width: 50%;
-    padding-bottom: 1.25em;
+  main .products .product-list .chair-wrapper figure {
+    width: 70%;
   }
 }
-main .products .product-list figure img.chair-img {
+main .products .product-list .chair-wrapper figure img.chair-img {
   width: 100%;
   border-radius: 5px;
 }
-main .products .product-list .chair-info {
+main .products .product-list .chair-wrapper .chair-info {
+  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  main .products .product-list .chair-info {
-    width: 60%;
+  main .products .product-list .chair-wrapper .chair-info {
+    margin: 0 0.5em;
   }
 }
 @media (min-width: 1024px) {
-  main .products .product-list .chair-info {
-    width: 50%;
-    justify-content: flex-start;
-    padding: 1.5em 1em;
+  main .products .product-list .chair-wrapper .chair-info {
+    width: 70%;
   }
 }
-main .products .product-list .chair-info a.chair-name {
+main .products .product-list .chair-wrapper .chair-info a.chair-name {
   text-decoration: none;
   width: 50%;
 }
-@media (min-width: 1024px) {
-  main .products .product-list .chair-info a.chair-name {
-    width: 51%;
+@media (min-width: 768px) {
+  main .products .product-list .chair-wrapper .chair-info a.chair-name {
+    width: 100%;
   }
 }
-main .products .product-list .chair-info a.chair-name h3 {
+main .products .product-list .chair-wrapper .chair-info a.chair-name h3 {
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 1.375em;
   color: #2C2721;
   margin: 0;
 }
-@media (min-width: 1024px) {
-  main .products .product-list .chair-info a.chair-name h3 {
-    width: 51%;
-    padding-left: 0.5em;
-  }
-}
-main .products .product-list .chair-info .chair-price {
+main .products .product-list .chair-wrapper .chair-info .chair-price {
   width: 50%;
   text-align: right;
   padding-right: 0.5em;
@@ -564,16 +624,13 @@ main .products .product-list .chair-info .chair-price {
   font-size: 1em;
   font-family: "Roboto", sans-serif;
 }
-@media (min-width: 1024px) {
-  main .products .product-list .chair-info .chair-price {
-    width: 51%;
+@media (min-width: 768px) {
+  main .products .product-list .chair-wrapper .chair-info .chair-price {
+    width: 100%;
     text-align: left;
-    padding-left: 0.625em;
-    .
-         padding-right: 0;
   }
 }
-main .products .product-list .chair-info .chair-description {
+main .products .product-list .chair-wrapper .chair-info .chair-description {
   width: 100%;
   padding: 0 0 1.875em 0;
   text-align: left;
@@ -606,7 +663,7 @@ main.waitlist h2 {
   font-size: 1.625em;
   padding-bottom: 0.5em;
 }
-main.waitlist p {
+main.waitlist p.subtitle {
   width: 100%;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -617,43 +674,62 @@ main.waitlist p {
   padding-bottom: 3.125em;
 }
 @media (min-width: 768px) {
-  main.waitlist p {
-    padding-bottom: 1em;
+  main.waitlist p.subtitle {
+    padding-bottom: 1.5em;
+    width: 80%;
   }
 }
 main.waitlist form.order-form {
   width: 100%;
+  padding: 1em;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
   main.waitlist form.order-form {
-    padding: 1em;
+    font-size: 16px;
   }
 }
 main.waitlist form.order-form .text {
+  width: 100%;
   display: flex;
-  align-items: baseline;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main.waitlist form.order-form .text .text-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-main.waitlist form.order-form .text label {
+@media (min-width: 768px) {
+  main.waitlist form.order-form .text .text-wrapper {
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  main.waitlist form.order-form .text .text-wrapper {
+    width: 45%;
+    justify-content: space-around;
+  }
+}
+main.waitlist form.order-form .text .text-wrapper label {
   width: 100%;
   color: #2C2721;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   padding-bottom: 0.25em;
 }
-@media (min-width: 768px) {
-  main.waitlist form.order-form .text label {
-    width: 20%;
-    text-align: right;
-    padding-right: 0.5em;
+@media (min-width: 1024px) {
+  main.waitlist form.order-form .text .text-wrapper label {
+    width: 80%;
   }
 }
-main.waitlist form.order-form .text input[type=text] {
+main.waitlist form.order-form .text .text-wrapper input[type=text] {
   box-sizing: border-box;
   width: 100%;
   color: #EEEEE8;
@@ -665,33 +741,40 @@ main.waitlist form.order-form .text input[type=text] {
   border-radius: 0.3125em;
   margin-bottom: 1em;
 }
-@media (min-width: 768px) {
-  main.waitlist form.order-form .text input[type=text] {
-    width: 70%;
+@media (min-width: 1024px) {
+  main.waitlist form.order-form .text .text-wrapper input[type=text] {
+    width: 80%;
   }
 }
-main.waitlist form.order-form .drop-down {
+main.waitlist form.order-form .alt-wrapper {
   width: 100%;
   display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
-main.waitlist form.order-form .drop-down label {
+@media (min-width: 768px) {
+  main.waitlist form.order-form .alt-wrapper {
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+main.waitlist form.order-form .alt-wrapper .drop-down {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  main.waitlist form.order-form .alt-wrapper .drop-down {
+    width: 45%;
+  }
+}
+main.waitlist form.order-form .alt-wrapper .drop-down label {
   width: 100%;
   color: #2C2721;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   padding-bottom: 0.25em;
 }
-@media (min-width: 768px) {
-  main.waitlist form.order-form .drop-down label {
-    width: 20%;
-    text-align: right;
-    padding-right: 0.5em;
-  }
-}
-main.waitlist form.order-form .drop-down select#chair {
+main.waitlist form.order-form .alt-wrapper .drop-down select#chair {
   box-sizing: border-box;
   width: 100%;
   color: #EEEEE8;
@@ -703,9 +786,40 @@ main.waitlist form.order-form .drop-down select#chair {
   border-radius: 5px;
   margin-bottom: 1em;
 }
+main.waitlist form.order-form .alt-wrapper .check-box {
+  width: 100%;
+  margin-bottom: 1em;
+}
 @media (min-width: 768px) {
-  main.waitlist form.order-form .drop-down select#chair {
-    width: 70%;
+  main.waitlist form.order-form .alt-wrapper .check-box {
+    width: 45%;
+    text-align: center;
+  }
+}
+main.waitlist form.order-form .alt-wrapper .check-box p {
+  color: #2C2721;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  text-align: left;
+  margin-bottom: 1em;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  main.waitlist form.order-form .alt-wrapper .check-box p {
+    text-align: center;
+  }
+}
+main.waitlist form.order-form .alt-wrapper .check-box label.radio {
+  color: #2C2721;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  padding-right: 2em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  main.waitlist form.order-form .alt-wrapper .check-box label.radio {
+    padding-right: 1em;
   }
 }
 main.waitlist form.order-form .text-area {
@@ -715,19 +829,17 @@ main.waitlist form.order-form .text-area {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+@media (min-width: 768px) {
+  main.waitlist form.order-form .text-area {
+    width: 80%;
+  }
+}
 main.waitlist form.order-form .text-area label {
   width: 100%;
   color: #2C2721;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   padding-bottom: 0.25em;
-}
-@media (min-width: 768px) {
-  main.waitlist form.order-form .text-area label {
-    width: 20%;
-    text-align: right;
-    padding-right: 0.5em;
-  }
 }
 main.waitlist form.order-form .text-area #comments {
   box-sizing: border-box;
@@ -741,12 +853,7 @@ main.waitlist form.order-form .text-area #comments {
   border-radius: 5px;
   margin-bottom: 0.3125em;
 }
-@media (min-width: 768px) {
-  main.waitlist form.order-form .text-area #comments {
-    width: 70%;
-  }
-}
-main.waitlist form.order-form input[type=submit] {
+main.waitlist input[type=submit] {
   box-sizing: border-box;
   color: #2C2721;
   padding: 0.5em;
@@ -755,28 +862,35 @@ main.waitlist form.order-form input[type=submit] {
   background-color: #EEEEE8;
   margin: 1em 0 0 0;
   font-family: "Roboto", sans-serif;
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: 700;
 }
 
 /* Footer */
 footer {
+  min-height: 10vh;
   background-color: #86631D;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0 1.25em 1.25em 1.25em;
+  padding: 0em 1em;
+  margin-top: 1em;
 }
-@media (min-width: 680px) {
+@media (min-width: 768px) {
   footer {
     font-size: 18px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    padding: 0em 2em;
   }
 }
 footer .contact {
   width: 100%;
-  padding-top: 1em;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
