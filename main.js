@@ -1,12 +1,13 @@
-/*const parallax = document.getElementById("parallax");
+const parallax = document.getElementById("parallax");
 
 window.addEventListener("scroll", function( )
 {
   let offset = window.pageYOffset; //value of how much the user has scrolled from the top
   console.log("Offset: " + offset);
+  console.log("Offset * 0.7:" + offset * 0.7);
+
   parallax.style.backgroundPositionY = offset * 0.7 + "px";
-  console.log("Offset: " + offset);
-})*/
+})
 
 
 
@@ -38,7 +39,7 @@ const navLinks = document.querySelectorAll('.nav-links li');
         link.style.animation = '';
       }
       else {
-        link.style.animation = `navLinkFade 0.3s ease forwards ${index / 7 + 0.5}s`;
+        link.style.animation = `navLinkFade 0.3s ease forwards ${index / 7+ 0.5}s`;
       }
     });
   });
