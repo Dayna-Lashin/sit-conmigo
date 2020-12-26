@@ -1,22 +1,9 @@
-const parallax = document.getElementById("parallax");
-
-window.addEventListener("scroll", function( )
-{
-  let offset = window.pageYOffset; //value of how much the user has scrolled from the top
-  console.log("Offset: " + offset);
-  console.log("Offset * 0.7:" + offset * 0.7);
-
-  parallax.style.backgroundPositionY = offset * 0.7 + "px";
-})
-
-
-
-
+// Navigation
 const navSlide = () => {
-const menuBtn = document.querySelector('.menu-btn');
-let menuOpen = false;
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
+  const menuBtn = document.querySelector('.menu-btn');
+  let menuOpen = false;
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
 
 
 
@@ -46,3 +33,15 @@ const navLinks = document.querySelectorAll('.nav-links li');
 }
 
 navSlide();
+
+
+
+// Parallax Scrolling on homepage index.html
+const parallax = document.getElementById("parallax");
+
+window.addEventListener("scroll", function( )
+{
+  let offset = window.pageYOffset; //value of how much the user has scrolled from the top
+
+  parallax.style.backgroundPositionY = offset * 0.7 + "px"; // Setting the background to move slower than foreground
+})
