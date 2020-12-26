@@ -20,14 +20,14 @@ body {
   /* base font size for ems */
 }
 
-/* HEADER */
+/* HOME PAGE HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   height: 12vh;
-  background-color: rgba(238, 238, 232, 0.9);
-  border-bottom: 1px solid rgba(134, 99, 29, 0.1);
+  background-color: #EEEEE8;
   /* Animations */
 }
 header figure {
@@ -62,6 +62,11 @@ header .nav-links {
   border-left: 1px solid rgba(134, 99, 29, 0.1);
   border-bottom: 1px solid rgba(134, 99, 29, 0.1);
 }
+@media (min-width: 425px) {
+  header .nav-links {
+    width: 25%;
+  }
+}
 @media (min-width: 768px) {
   header .nav-links {
     width: 100%;
@@ -71,6 +76,7 @@ header .nav-links {
     transform: none;
     transition: none;
     border: none;
+    background-color: rgba(134, 99, 29, 0);
   }
 }
 header .nav-links li {
@@ -91,6 +97,10 @@ header .nav-links li a {
   text-align: right;
   text-transform: uppercase;
   margin-left: 1.25em;
+}
+header .nav-links li a:hover {
+  text-decoration: underline;
+  color: #2C2721;
 }
 @media (min-width: 768px) {
   header .nav-links li a {
@@ -163,7 +173,7 @@ header .nav-active {
 /************ HOME PAGE ************/
 /* HERO SECTION */
 section.hero {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,6 +354,10 @@ section.hero {
   width: 125px;
   text-transform: uppercase;
 }
+.call-to-action a:hover {
+  background-color: #86631D;
+  color: #EEEEE8;
+}
 @media (min-width: 768px) {
   .call-to-action a {
     width: 150px;
@@ -457,7 +471,7 @@ section.hero {
 }
 .email-list form .form-inputs input[type=text] {
   box-sizing: border-box;
-  color: #EEEEE8;
+  color: #2C2721;
   padding: 1em;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
@@ -465,6 +479,12 @@ section.hero {
   font-size: 1em;
   border-radius: 5px;
   width: 100%;
+}
+.email-list form .form-inputs input[type=text]::placeholder {
+  color: #EEEEE8;
+}
+.email-list form .form-inputs input[type=text]:focus {
+  outline-color: #2C2721;
 }
 @media (min-width: 1024px) {
   .email-list form .form-inputs input[type=text] {
@@ -483,6 +503,10 @@ section.hero {
   font-size: 1em;
   font-weight: 500;
 }
+.email-list form .form-inputs input[type=submit]:hover {
+  background-color: #2C2721;
+  color: #EEEEE8;
+}
 
 /* PRODUCTS */
 main .products {
@@ -491,6 +515,7 @@ main .products {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  border-top: 1px solid rgba(134, 99, 29, 0.1);
 }
 @media (min-width: 768px) {
   main .products {
@@ -582,7 +607,10 @@ main .products .product-list .chair-wrapper figure {
     width: 70%;
   }
 }
-main .products .product-list .chair-wrapper figure img.chair-img {
+main .products .product-list .chair-wrapper figure a:hover {
+  opacity: 0.5;
+}
+main .products .product-list .chair-wrapper figure a img.chair-img {
   width: 100%;
   border-radius: 5px;
 }
@@ -606,6 +634,10 @@ main .products .product-list .chair-wrapper .chair-info {
 main .products .product-list .chair-wrapper .chair-info a.chair-name {
   text-decoration: none;
   width: 50%;
+  color: #2C2721;
+}
+main .products .product-list .chair-wrapper .chair-info a.chair-name:hover {
+  text-decoration: underline;
 }
 @media (min-width: 768px) {
   main .products .product-list .chair-wrapper .chair-info a.chair-name {
@@ -652,6 +684,7 @@ main.waitlist {
   flex-wrap: wrap;
   width: 100%;
   padding: 2em 1.5em;
+  border-top: 1px solid rgba(134, 99, 29, 0.1);
 }
 @media (min-width: 768px) {
   main.waitlist {
@@ -735,7 +768,7 @@ main.waitlist form.order-form .text .text-wrapper label {
 main.waitlist form.order-form .text .text-wrapper input[type=text] {
   box-sizing: border-box;
   width: 100%;
-  color: #EEEEE8;
+  color: #2C2721;
   padding: 0.625em;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
@@ -743,6 +776,12 @@ main.waitlist form.order-form .text .text-wrapper input[type=text] {
   font-size: 1em;
   border-radius: 0.3125em;
   margin-bottom: 1em;
+}
+main.waitlist form.order-form .text .text-wrapper input[type=text]::placeholder {
+  color: #EEEEE8;
+}
+main.waitlist form.order-form .text .text-wrapper input[type=text]:focus {
+  outline-color: #2C2721;
 }
 @media (min-width: 1024px) {
   main.waitlist form.order-form .text .text-wrapper input[type=text] {
@@ -780,7 +819,7 @@ main.waitlist form.order-form .alt-wrapper .drop-down label {
 main.waitlist form.order-form .alt-wrapper .drop-down select#chair {
   box-sizing: border-box;
   width: 100%;
-  color: #EEEEE8;
+  color: #2C2721;
   padding: 1em;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
@@ -788,6 +827,9 @@ main.waitlist form.order-form .alt-wrapper .drop-down select#chair {
   font-size: 1em;
   border-radius: 5px;
   margin-bottom: 1em;
+}
+main.waitlist form.order-form .alt-wrapper .drop-down select#chair:focus {
+  outline-color: #2C2721;
 }
 main.waitlist form.order-form .alt-wrapper .check-box {
   width: 100%;
@@ -847,7 +889,7 @@ main.waitlist form.order-form .text-area label {
 main.waitlist form.order-form .text-area #comments {
   box-sizing: border-box;
   width: 100%;
-  color: #EEEEE8;
+  color: #2C2721;
   padding: 1em;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
@@ -855,6 +897,12 @@ main.waitlist form.order-form .text-area #comments {
   font-size: 1em;
   border-radius: 5px;
   margin-bottom: 0.3125em;
+}
+main.waitlist form.order-form .text-area #comments::placeholder {
+  color: #EEEEE8;
+}
+main.waitlist form.order-form .text-area #comments:focus {
+  outline-color: #2C2721;
 }
 main.waitlist input[type=submit] {
   box-sizing: border-box;
@@ -867,6 +915,13 @@ main.waitlist input[type=submit] {
   font-family: "Roboto", sans-serif;
   font-size: 0.75em;
   font-weight: 700;
+}
+main.waitlist input[type=submit]:hover {
+  background-color: #2C2721;
+  color: #EEEEE8;
+}
+main.waitlist input[type=submit]:focus {
+  outline-color: #2C2721;
 }
 
 /* Footer */
@@ -919,6 +974,9 @@ footer .contact .icons a {
   font-size: 1.125em;
   color: #EEEEE8;
   margin: 0 0.5em;
+}
+footer .contact .icons a:hover {
+  font-size: 125%;
 }
 
 /*# sourceMappingURL=main.css.map */
