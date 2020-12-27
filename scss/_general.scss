@@ -1,0 +1,17 @@
+@use 'variable';
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: variable.$alabaster;
+}
+
+body {
+  overflow-x: hidden; /* hides vertical nav */
+  font-size: 16px; /* base font size for ems */
+}

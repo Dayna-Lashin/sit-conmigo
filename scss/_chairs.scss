@@ -1,0 +1,163 @@
+@use 'variable';
+@use 'mixins';
+
+/* PRODUCTS */
+
+main .products {
+  padding: 3.125em 1.25em 0 1.25em;
+  @include mixins.flex(center, center, wrap);
+  border-top: 1px solid variable.$golden-brown-border;
+
+  @media (min-width: 768px) {
+    padding: 3.125em 0.5em 1.25em 0.5em;
+    font-size: 18px;
+  }
+
+  h2.tag-line {
+    max-width: 35ch;
+    text-align: center;
+    font-family: variable.$body-font;
+    font-size: 1.625em;
+    line-height: 1.5em;
+    color: variable.$black-chocolate;
+    font-weight: 400;
+    padding: 0 0.625em 2em 0.625em;
+  }
+
+  p.subtitle {
+    position: relative;
+    z-index: 100;
+    color: variable.$black-chocolate;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-family: variable.$body-font;
+    width: 100%;
+    padding: 0 1em;
+
+    @media (min-width: 768px) {
+     width: 90%;
+    }
+
+    @media (min-width: 1024px) {
+     width: 85%;
+    }
+
+    &:before {
+      border-top: 1px solid variable.$golden-brown-border;
+      content:"";
+      margin: 0 auto;
+      /* this centers the line to the full width specified */
+      position: absolute;
+      /* positioning must be absolute here, and relative positioning must be applied to the parent */
+      top: 50%; left: 0; right: 0; bottom: 0;
+      width: 95%;
+      z-index: -100;
+    }
+
+    span {
+      background: variable.$alabaster;
+      padding-right: 0.3125em;
+    }
+  }
+
+  .product-list {
+    @include mixins.flex(center, center, wrap);
+
+    @media (min-width: 768px) {
+      justify-content: space-around;
+      font-size: 16px;
+    }
+
+    .chair-wrapper {
+      width: 90%;
+      @include mixins.flex(center, center, wrap);
+
+      @media (min-width: 768px) {
+        width: 45%;
+        padding: 1em;
+      }
+
+      figure {
+        width: 90%;
+        padding-top: 1.25em;
+
+        @media (min-width: 1024px) {
+          width: 70%;
+        }
+
+        a {
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          img.chair-img {
+            width: 100%;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .chair-info {
+        width: 90%;
+        @include mixins.flex(space-around, center, wrap);
+
+        @media (min-width: 768px) {
+          margin: 0 0.5em;
+        }
+
+        @media (min-width: 1024px) {
+          width: 70%;
+        }
+
+        a.chair-name {
+          text-decoration: none;
+          width: 50%;
+          color: variable.$black-chocolate;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          @media (min-width: 768px) {
+            width: 100%;
+          }
+
+          h3 {
+            text-align: left;
+            font-family: variable.$header-font;
+            font-size: 1.375em;
+            color: variable.$black-chocolate;
+            margin: 0;
+          }
+        }
+
+        .chair-price {
+          width: 50%;
+          text-align: right;
+          padding-right: 0.5em;
+          color: variable.$golden-brown;
+          font-size: 1em;
+          font-family: variable.$body-font;
+
+          @media (min-width: 768px) {
+            width: 100%;
+            text-align: left;
+          }
+        }
+
+        .chair-description {
+          width: 100%;
+          padding: 0 0 1.875em 0;
+          text-align: left;
+          color: variable.$black-chocolate;
+          font-size: 1em;
+          font-family: variable.$body-font;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+}
