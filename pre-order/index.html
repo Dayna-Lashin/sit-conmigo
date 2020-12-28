@@ -23,119 +23,121 @@
   </head>
 
   <body>
-    <header class="alt">
-      <figure>
-        <a href="../index.html">
-          <img src="../img/sit-conmigo.svg" alt="sit conmigo logo" />
-        </a>
-      </figure>
+    <div class="overflow-wrapper">
+      <header class="alt">
+        <figure>
+          <a href="../index.html">
+            <img src="../img/sit-conmigo.svg" alt="sit conmigo logo" />
+          </a>
+        </figure>
 
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <a href="../index.html">Home</a>
-          </li>
-          <li>
-           <a href="../chairs/index.html">Chairs</a>
-          </li>
-          <li>
-           <a href="index.html">Pre-order</a>
-          </li>
-        </ul>
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="../index.html">Home</a>
+            </li>
+            <li>
+             <a href="../chairs/index.html">Chairs</a>
+            </li>
+            <li>
+             <a href="index.html">Pre-order</a>
+            </li>
+          </ul>
 
-        <div class="menu-btn">
-          <div class="menu-btn_burger"></div>
-        </div>
-      </nav>
-    </header>
+          <div class="menu-btn">
+            <div class="menu-btn_burger"></div>
+          </div>
+        </nav>
+      </header>
 
-    <main class="pre-order">
-      <h2>
-        Thank you for your interest!
-      </h2>
-      <p class="subtitle">
-        Please fill out the form below and we will let you know when your new chair is ready.
-      </p>
+      <main class="pre-order">
+        <h2>
+          Thank you for your interest!
+        </h2>
+        <p class="subtitle">
+          Please fill out the form below and we will let you know when your new chair is ready.
+        </p>
 
-      <form class="order-form" action="" method="get">
-        <div class="text">
-          <div class="text-wrapper">
-            <label for="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" placeholder="Jane" required>
+        <form class="order-form" action="" method="get">
+          <div class="text">
+            <div class="text-wrapper">
+              <label for="first-name">First Name</label>
+              <input type="text" name="first-name" id="first-name" placeholder="Jane" required>
+            </div>
+
+            <div class="text-wrapper">
+              <label for="last-name">Last Name</label>
+              <input type="text" name="last-name" id="last-name" placeholder="Doe" required>
+            </div>
+
+            <div class="text-wrapper">
+              <label for="email">Email Address</label>
+              <input type="text" name="email" id="email" placeholder="janedoe@gmail.com" required>
+            </div>
+
+            <div class="text-wrapper">
+              <label for="phone">Phone Number</label>
+              <input type="text" name="phone" id="phone" placeholder="555-555-5555" required>
+            </div>
           </div>
 
-          <div class="text-wrapper">
-            <label for="last-name">Last Name</label>
-            <input type="text" name="last-name" id="last-name" placeholder="Doe" required>
+          <div class="wrapper">
+            <div class="drop-down">
+              <label for="chair">Chair Type</label>
+              <select id="chair" name="chair">
+                <option value="" disabled selected></option>
+                <option value="Campo">Campo</option>
+                <option value="Playa">Playa</option>
+                <option value="Urbe Red">Urbe Red</option>
+                <option value="Urbe Green">Urbe Green</option>
+              </select>
+            </div>
+
+            <div class="check-box">
+              <p class="mailing-list">Join our mailing list?</p>
+              <input type="radio" id="yes" name="answer" value="yes">
+              <label class="radio" for="yes">Yes</label>
+              <input type="radio" id="no" name="answer" value="no">
+              <label class="radio" for="no">No</label>
+            </div>
           </div>
 
-          <div class="text-wrapper">
-            <label for="email">Email Address</label>
-            <input type="text" name="email" id="email" placeholder="janedoe@gmail.com" required>
+          <div class="text-area">
+            <label for="comments">Additional Comments</label>
+            <textarea name="comments" id="comments" rows="7" cols="30" placeholder="Additional comments here..."></textarea>
           </div>
+        </form>
 
-          <div class="text-wrapper">
-            <label for="phone">Phone Number</label>
-            <input type="text" name="phone" id="phone" placeholder="555-555-5555" required>
+        <input onclick="alert('thank you for your order!')" type="submit" name="subscribe" value="Submit">
+      </main>
+
+        <footer>
+          <div class="contact">
+            <div class="email">
+              <a href="mailto:sitconmigo@gmail.com" target="_blank">
+                <p>
+                  <i class="far fa-envelope"></i>
+                  Email Us
+                </p>
+              </a>
+            </div>
+
+            <div class="icons">
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
-        </div>
+      </footer>
 
-        <div class="wrapper">
-          <div class="drop-down">
-            <label for="chair">Chair Type</label>
-            <select id="chair" name="chair">
-              <option value="" disabled selected></option>
-              <option value="Campo">Campo</option>
-              <option value="Playa">Playa</option>
-              <option value="Urbe Red">Urbe Red</option>
-              <option value="Urbe Green">Urbe Green</option>
-            </select>
-          </div>
+      <script type="text/javascript" src="../main.js"></script>
 
-          <div class="check-box">
-            <p class="mailing-list">Join our mailing list?</p>
-            <input type="radio" id="yes" name="answer" value="yes">
-            <label class="radio" for="yes">Yes</label>
-            <input type="radio" id="no" name="answer" value="no">
-            <label class="radio" for="no">No</label>
-          </div>
-        </div>
-
-        <div class="text-area">
-          <label for="comments">Additional Comments</label>
-          <textarea name="comments" id="comments" rows="7" cols="30" placeholder="Additional comments here..."></textarea>
-        </div>
-      </form>
-
-      <input onclick="alert('thank you for your order!')" type="submit" name="subscribe" value="Submit">
-    </main>
-
-      <footer>
-        <div class="contact">
-          <div class="email">
-            <a href="mailto:sitconmigo@gmail.com" target="_blank">
-              <p>
-                <i class="far fa-envelope"></i>
-                Email Us
-              </p>
-            </a>
-          </div>
-
-          <div class="icons">
-            <a href="https://www.facebook.com" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="../main.js"></script>
-
+    </div>
   </body>
 </html>

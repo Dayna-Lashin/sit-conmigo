@@ -17,3 +17,10 @@ body {
   overflow-x: hidden; /* hides vertical nav */
   font-size: 16px; /* base font size for ems */
 }
+
+.overflow-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}

@@ -22,6 +22,13 @@ body {
   /* base font size for ems */
 }
 
+.overflow-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+
 /******************** HEADER ********************/
 header {
   display: flex !important;
@@ -30,6 +37,7 @@ header {
   flex-wrap: wrap;
   height: 10vh;
   background-color: #EEEEE8;
+  overflow-x: hidden;
   /* Animations */
 }
 header figure {
@@ -55,7 +63,7 @@ header .nav-links {
   width: 40%;
   position: absolute;
   right: 0;
-  height: 25%;
+  height: 200px;
   top: 10vh;
   background-color: #EEEEE8;
   transform: translateX(100%);
@@ -64,10 +72,11 @@ header .nav-links {
   z-index: 300;
   border-left: 1px solid rgba(134, 99, 29, 0.1);
   border-bottom: 1px solid rgba(134, 99, 29, 0.1);
+  border-top: 1px solid rgba(134, 99, 29, 0.1);
 }
 @media (min-width: 425px) {
   header .nav-links {
-    width: 25%;
+    width: 30%;
   }
 }
 @media (min-width: 768px) {
@@ -98,6 +107,7 @@ header .nav-links li a {
   text-align: right;
   text-transform: uppercase;
   margin-left: 1.25em;
+  padding: 1em 0;
 }
 header .nav-links li a:hover {
   text-decoration: underline;

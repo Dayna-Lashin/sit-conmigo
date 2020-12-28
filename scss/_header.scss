@@ -12,6 +12,7 @@ header {
   flex-wrap: wrap;
   height: 10vh;
   background-color: variable.$alabaster;
+  overflow-x: hidden;
 
   figure {
     width: 25px;
@@ -32,7 +33,7 @@ header {
     width: 40%;
     position: absolute;
     right: 0;
-    height: 25%;
+    height: 200px;
     top: 10vh;
     background-color: variable.$alabaster;
     transform: translateX(100%);
@@ -41,9 +42,10 @@ header {
     z-index: 300;
     border-left: 1px solid variable.$golden-brown-border;
     border-bottom: 1px solid variable.$golden-brown-border;
+    border-top: 1px solid variable.$golden-brown-border;
 
     @media (min-width: 425px) {
-      width: 25%;
+      width: 30%;
     }
 
     @media (min-width: 768px) {
@@ -72,6 +74,7 @@ header {
         text-align: right;
         text-transform: uppercase;
         margin-left: 1.25em;
+        padding: 1em 0;
 
         &:hover {
           text-decoration: underline;
