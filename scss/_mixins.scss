@@ -1,5 +1,5 @@
 @mixin flex ($justify, $align, $wrap) {
-  display: flex;
+  display: flex !important;
   justify-content: $justify;
   align-content: $align;
   flex-wrap: $wrap;

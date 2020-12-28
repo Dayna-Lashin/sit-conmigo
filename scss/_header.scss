@@ -6,7 +6,7 @@
 
 header {
   //@include mixins.flex(space-between, center, wrap);
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
