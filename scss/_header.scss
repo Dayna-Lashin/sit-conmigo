@@ -9,10 +9,9 @@ header {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
+  height: 75px;
   flex-wrap: wrap;
-  height: 10vh;
   background-color: variable.$alabaster;
-  overflow-x: hidden;
 
   figure {
     width: 25px;
@@ -34,7 +33,7 @@ header {
     position: absolute;
     right: 0;
     height: 200px;
-    top: 10vh;
+    top: 75px;
     background-color: variable.$alabaster;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
@@ -50,6 +49,7 @@ header {
 
     @media (min-width: 768px) {
       width: 100%;
+      height: auto;
       position: static;
       flex-direction: row;
       align-items: center;

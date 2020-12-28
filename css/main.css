@@ -25,7 +25,6 @@ body {
 .overflow-wrapper {
   width: 100%;
   overflow-x: hidden;
-  overflow-y: hidden;
   position: relative;
 }
 
@@ -34,10 +33,9 @@ header {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
+  height: 75px;
   flex-wrap: wrap;
-  height: 10vh;
   background-color: #EEEEE8;
-  overflow-x: hidden;
   /* Animations */
 }
 header figure {
@@ -64,7 +62,7 @@ header .nav-links {
   position: absolute;
   right: 0;
   height: 200px;
-  top: 10vh;
+  top: 75px;
   background-color: #EEEEE8;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
@@ -82,6 +80,7 @@ header .nav-links {
 @media (min-width: 768px) {
   header .nav-links {
     width: 100%;
+    height: auto;
     position: static;
     flex-direction: row;
     align-items: center;
@@ -356,7 +355,7 @@ header .nav-active {
   align-content: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 2em 1.5em;
+  padding: 2em 1.5em 1em 1.5em;
   border-top: 1px solid rgba(134, 99, 29, 0.1);
   background-color: #EEEEE8;
 }
@@ -583,7 +582,14 @@ header .nav-active {
 .pre-order form.order-form .text-area #comments:focus {
   outline-color: #2C2721;
 }
-.pre-order input[type=submit] {
+.pre-order form.order-form .submit {
+  display: flex !important;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.pre-order form.order-form .submit input[type=submit] {
   padding: 0.5em;
   margin: 1em 0 0 0;
   border-radius: 5px;
@@ -594,11 +600,11 @@ header .nav-active {
   font-size: 0.75em;
   font-weight: 700;
 }
-.pre-order input[type=submit]:hover {
+.pre-order form.order-form .submit input[type=submit]:hover {
   background-color: #2C2721;
   color: #EEEEE8;
 }
-.pre-order input[type=submit]:focus {
+.pre-order form.order-form .submit input[type=submit]:focus {
   outline-color: #2C2721;
 }
 
@@ -684,6 +690,11 @@ section.hero {
     font-size: 24px;
   }
 }
+@media (min-width: 1200px) {
+  section.hero {
+    background-position: bottom center;
+  }
+}
 
 .hero-content {
   display: flex !important;
@@ -712,16 +723,15 @@ section.hero {
 
 /***** about *****/
 .about {
-  min-height: 50vh;
   padding: 3em 2em;
 }
 @media (min-width: 768px) {
   .about {
-    font-size: 18px;
     display: flex !important;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    font-size: 18px;
   }
 }
 @media (min-width: 1024px) {
@@ -770,32 +780,30 @@ section.hero {
 .img-2 {
   height: 100vh;
   width: 100%;
-  background-image: url("../img/red-pattern.jpg");
+  background-image: url("../img/patterned-chairs-full-crop.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
   background-attachment: fixed;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .img-2 {
-    background-image: url("../img/patterned-chairs-full-crop.jpg");
     background-position: center bottom;
   }
 }
 
 /***** CALL TO ACTION SECTION *****/
 .call-to-action {
-  min-height: 50vh;
   display: flex !important;
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
+  padding: 3em 2em;
 }
 @media (min-width: 1024px) {
   .call-to-action {
     font-size: 18px;
-    min-height: 40vh;
   }
 }
 .call-to-action .call-to-action-text {
@@ -823,7 +831,7 @@ section.hero {
 .call-to-action a {
   width: 125px;
   padding: 0.625em 0.3125em;
-  margin: 0.625em 0 1.25em 0;
+  margin: 0.625em 0 0 0;
   border: 2px ridge #86631D;
   border-radius: 5px;
   text-decoration: none;
@@ -860,7 +868,7 @@ section.hero {
   background-position: center bottom;
   background-attachment: fixed;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .img-3 {
     background-image: url("../img/white-square.jpg");
     background-position: center center;
@@ -869,16 +877,11 @@ section.hero {
 
 /***** EMAIL FORM SECTION *****/
 .email-list {
-  min-height: 50vh;
   display: flex !important;
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
-}
-@media (min-width: 425px) {
-  .email-list {
-    min-height: 40vh;
-  }
+  padding: 3em 2em;
 }
 .email-list form {
   width: 80%;
@@ -886,11 +889,6 @@ section.hero {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-}
-@media (min-width: 425px) {
-  .email-list form {
-    width: 60%;
-  }
 }
 @media (min-width: 1024px) {
   .email-list form {
@@ -968,11 +966,6 @@ section.hero {
 }
 .email-list form .form-inputs input[type=text]:focus {
   outline-color: #2C2721;
-}
-@media (min-width: 1024px) {
-  .email-list form .form-inputs input[type=text] {
-    width: 90%;
-  }
 }
 .email-list form .form-inputs input[type=submit] {
   margin: 0.3125em 0 0 0;

@@ -28,6 +28,10 @@ section.hero {
   @media (min-width: 1024px){
     font-size: 24px;
   }
+
+  @media (min-width: 1200px){
+    background-position: bottom center;
+  }
 }
 
 .hero-content {
@@ -60,12 +64,11 @@ section.hero {
 /***** about *****/
 
 .about {
-  min-height: 50vh;
   padding: 3em 2em;
 
   @media (min-width: 768px){
-    font-size: 18px;
     @include mixins.flex(center, center, wrap);
+    font-size: 18px;
   }
 
   @media (min-width: 1024px){
@@ -114,15 +117,14 @@ section.hero {
 .img-2 {
   height: 100vh;
   width: 100%;
-  background-image: url("../img/red-pattern.jpg");
+  background-image: url("../img/patterned-chairs-full-crop.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
   background-attachment: fixed;
 
-  @media (min-width: 768px) {
-    background-image: url("../img/patterned-chairs-full-crop.jpg");
+  @media (min-width: 1024px) {
     background-position: center bottom;
   }
 }
@@ -132,12 +134,11 @@ section.hero {
 /***** CALL TO ACTION SECTION *****/
 
 .call-to-action {
-  min-height: 50vh;
   @include mixins.flex(center, center, nowrap);
+  padding: 3em 2em;
 
   @media (min-width: 1024px) {
     font-size: 18px;
-    min-height: 40vh;
   }
 
   .call-to-action-text {
@@ -165,7 +166,7 @@ section.hero {
   a {
     width: 125px;
     padding: 0.625em 0.3125em;
-    margin: 0.625em 0 1.25em 0;
+    margin: 0.625em 0 0 0;
     border: 2px ridge variable.$golden-brown;
     border-radius: 5px;
     text-decoration: none;
@@ -205,7 +206,7 @@ section.hero {
   background-position: center bottom;
   background-attachment: fixed;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background-image: url("../img/white-square.jpg");
     background-position: center center;
   }
@@ -216,20 +217,15 @@ section.hero {
 /***** EMAIL FORM SECTION *****/
 
 .email-list {
-  min-height: 50vh;
   @include mixins.flex(center, center, nowrap);
+  padding: 3em 2em;
 
-  @media (min-width: 425px) {
-    min-height: 40vh;
-  }
 
   form {
     width: 80%;
     @include mixins.flex(center, center, wrap);
 
-    @media (min-width: 425px) {
-      width: 60%;
-    }
+
 
     @media (min-width: 1024px) {
       @include mixins.flex(space-between, center, wrap);
@@ -297,10 +293,6 @@ section.hero {
 
         &:focus {
           outline-color: variable.$black-chocolate;
-        }
-
-        @media (min-width: 1024px) {
-          width: 90%;
         }
       }
 

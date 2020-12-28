@@ -7,7 +7,7 @@
 .pre-order {
   @include mixins.flex(center, center, wrap);
   width: 100%;
-  padding: 2em 1.5em;
+  padding: 2em 1.5em 1em 1.5em;
   border-top: 1px solid variable.$golden-brown-border;
   background-color: variable.$alabaster;
 
@@ -66,123 +66,123 @@
           @include mixins.flex(space-around, flex-start, wrap);
         }
 
-       label {
-        width: 100%;
-        padding-bottom: 0.25em;
-        font-family: variable.$body-font;
-        font-size: 1em;
-        color: variable.$black-chocolate;
+        label {
+          width: 100%;
+          padding-bottom: 0.25em;
+          font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$black-chocolate;
 
-        @media (min-width: 1024px){
-          width: 80%;
-        }
-      }
-
-      input[type=text] {
-        width: 100%;
-        padding: 0.625em;
-        margin-bottom: 1em;
-        border-radius: 0.3125em;
-        border: none;
-        background-color: variable.$golden-brown-form;
-        font-family: variable.$body-font;
-        font-size: 1em;
-        color: variable.$black-chocolate;
-
-        &::placeholder {
-          color: variable.$alabaster;
+          @media (min-width: 1024px){
+            width: 80%;
+          }
         }
 
-        &:focus {
-          outline-color: variable.$black-chocolate;
-        }
+        input[type=text] {
+          width: 100%;
+          padding: 0.625em;
+          margin-bottom: 1em;
+          border-radius: 0.3125em;
+          border: none;
+          background-color: variable.$golden-brown-form;
+          font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$black-chocolate;
 
-        @media (min-width: 1024px){
-          width: 80%;
+          &::placeholder {
+            color: variable.$alabaster;
+          }
+
+          &:focus {
+            outline-color: variable.$black-chocolate;
+          }
+
+          @media (min-width: 1024px){
+            width: 80%;
+          }
         }
       }
     }
-  }
 
-  .wrapper {
-    width: 100%;
-    @include mixins.flex(center, center, wrap);
-
-    @media (min-width: 768px){
-      @include mixins.flex(space-between, center, wrap);
-      width: 80%;
-    }
-
-    .drop-down {
+    .wrapper {
       width: 100%;
+      @include mixins.flex(center, center, wrap);
 
       @media (min-width: 768px){
-        width: 45%;
+        @include mixins.flex(space-between, center, wrap);
+        width: 80%;
       }
 
-      label {
-        width: 100%;
-        padding-bottom: 0.25em;
-        color: variable.$black-chocolate;
-        font-family: variable.$body-font;
-        font-size: 1em;
-      }
-
-      select#chair {
-        width: 100%;
-        margin-bottom: 1em;
-        padding: 1em;
-        border-radius: 5px;
-        border: none;
-        background-color: variable.$golden-brown-form;
-        font-family: variable.$body-font;
-        font-size: 1em;
-        color: variable.$black-chocolate;
-
-        &:focus {
-          outline-color: variable.$black-chocolate;
-        }
-      }
-    }
-
-    .check-box {
-      width: 100%;
-      margin-bottom: 1em;
-
-      @media (min-width: 768px){
-        width: 45%;
-        text-align: center;
-      }
-
-      p {
-        width: 100%;
-        margin-bottom: 1em;
-        font-family: variable.$body-font;
-        font-size: 1em;
-        color: variable.$black-chocolate;
-        text-align: left;
-        margin-bottom: 1em;
+      .drop-down {
         width: 100%;
 
         @media (min-width: 768px){
+          width: 45%;
+        }
+
+        label {
+          width: 100%;
+          padding-bottom: 0.25em;
+          color: variable.$black-chocolate;
+          font-family: variable.$body-font;
+          font-size: 1em;
+        }
+
+        select#chair {
+          width: 100%;
+          margin-bottom: 1em;
+          padding: 1em;
+          border-radius: 5px;
+          border: none;
+          background-color: variable.$golden-brown-form;
+          font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$black-chocolate;
+
+          &:focus {
+            outline-color: variable.$black-chocolate;
+          }
+        }
+      }
+
+      .check-box {
+        width: 100%;
+        margin-bottom: 1em;
+
+        @media (min-width: 768px){
+          width: 45%;
           text-align: center;
         }
-      }
 
-      label.radio {
-        width: 100%;
-        padding-right: 2em;
-        margin-bottom: 1em;
-        font-family: variable.$body-font;
-        font-size: 1em;
-        color: variable.$black-chocolate;
+        p {
+          width: 100%;
+          margin-bottom: 1em;
+          font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$black-chocolate;
+          text-align: left;
+          margin-bottom: 1em;
+          width: 100%;
 
-        @media (min-width: 768px){
-          padding-right: 1em;
+          @media (min-width: 768px){
+            text-align: center;
+          }
+        }
+
+        label.radio {
+          width: 100%;
+          padding-right: 2em;
+          margin-bottom: 1em;
+          font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$black-chocolate;
+
+          @media (min-width: 768px){
+            padding-right: 1em;
+          }
         }
       }
     }
-  }
 
     .text-area {
       @include mixins.flex(flex-start, flex-start, wrap);
@@ -220,26 +220,31 @@
         }
       }
     }
-  }
 
-  input[type=submit] {
-    padding: 0.5em;
-    margin: 1em 0 0 0;
-    border-radius: 5px;
-    border: 1px solid variable.$black-chocolate;
-    background-color: variable.$alabaster;
-    font-family: variable.$body-font;
-    color: variable.$black-chocolate;
-    font-size: .75em;
-    font-weight: 700;
+    .submit {
+      @include mixins.flex(center, center, nowrap);
+      width: 100%;
 
-    &:hover {
-      background-color: variable.$black-chocolate;
-      color: variable.$alabaster;
-    }
+      input[type=submit] {
+        padding: 0.5em;
+        margin: 1em 0 0 0;
+        border-radius: 5px;
+        border: 1px solid variable.$black-chocolate;
+        background-color: variable.$alabaster;
+        font-family: variable.$body-font;
+        color: variable.$black-chocolate;
+        font-size: .75em;
+        font-weight: 700;
 
-    &:focus {
-      outline-color: variable.$black-chocolate;
+        &:hover {
+          background-color: variable.$black-chocolate;
+          color: variable.$alabaster;
+        }
+
+        &:focus {
+          outline-color: variable.$black-chocolate;
+        }
+      }
     }
   }
 }
