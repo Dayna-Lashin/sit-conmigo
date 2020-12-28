@@ -1,13 +1,15 @@
 @use 'variable';
 @use 'mixins';
 
-/* Waitlist */
-main.waitlist {
-  background-color: variable.$alabaster;
+
+/******************** PRE-ORDER FORM PAGE ********************/
+
+.pre-order {
   @include mixins.flex(center, center, wrap);
   width: 100%;
   padding: 2em 1.5em;
   border-top: 1px solid variable.$golden-brown-border;
+  background-color: variable.$alabaster;
 
   @media (min-width: 768px){
     font-size: 18px;
@@ -15,45 +17,45 @@ main.waitlist {
 
   h2 {
     width: 100%;
-    text-align: center;
+     padding-bottom: 0.5em;
     font-family: variable.$header-font;
     color: variable.$black-chocolate;
     font-size: 1.625em;
-    padding-bottom: 0.5em;
+    text-align: center;
   }
 
   p.subtitle {
     width: 100%;
-    text-align: center;
+    padding-bottom: 3.125em;
     font-family: variable.$body-font;
-    color: variable.$black-chocolate;
     font-size: 1em;
+    color: variable.$black-chocolate;
     line-height: 1.5em;
     font-weight: 300;
-    padding-bottom: 3.125em;
+    text-align: center;
 
     @media (min-width: 768px){
-      padding-bottom: 1.5em;
       width: 80%;
+      padding-bottom: 1.5em;
     }
   }
 
   form.order-form {
+    @include mixins.flex(center, center, wrap);
     width: 100%;
     padding: 1em;
-    @include mixins.flex(center, center, wrap);
 
     @media (min-width: 768px){
       font-size: 16px;
     }
 
     .text {
-      width: 100%;
       @include mixins.flex(center, center, wrap);
+      width: 100%;
 
       .text-wrapper {
-        width: 100%;
         @include mixins.flex(center, flex-start, wrap);
+        width: 100%;
 
         @media (min-width: 768px){
           width: 80%;
@@ -61,15 +63,15 @@ main.waitlist {
 
         @media (min-width: 1024px){
           width: 45%;
-          justify-content: space-around;
+          @include mixins.flex(space-around, flex-start, wrap);
         }
 
        label {
         width: 100%;
-        color: variable.$black-chocolate;
+        padding-bottom: 0.25em;
         font-family: variable.$body-font;
         font-size: 1em;
-        padding-bottom: 0.25em;
+        color: variable.$black-chocolate;
 
         @media (min-width: 1024px){
           width: 80%;
@@ -77,16 +79,15 @@ main.waitlist {
       }
 
       input[type=text] {
-        box-sizing: border-box;
         width: 100%;
-        color: variable.$black-chocolate;
         padding: 0.625em;
+        margin-bottom: 1em;
+        border-radius: 0.3125em;
         border: none;
         background-color: variable.$golden-brown-form;
         font-family: variable.$body-font;
         font-size: 1em;
-        border-radius: 0.3125em;
-        margin-bottom: 1em;
+        color: variable.$black-chocolate;
 
         &::placeholder {
           color: variable.$alabaster;
@@ -103,13 +104,13 @@ main.waitlist {
     }
   }
 
-  .alt-wrapper {
+  .wrapper {
     width: 100%;
     @include mixins.flex(center, center, wrap);
 
     @media (min-width: 768px){
+      @include mixins.flex(space-between, center, wrap);
       width: 80%;
-      justify-content: space-between;
     }
 
     .drop-down {
@@ -121,23 +122,22 @@ main.waitlist {
 
       label {
         width: 100%;
+        padding-bottom: 0.25em;
         color: variable.$black-chocolate;
         font-family: variable.$body-font;
         font-size: 1em;
-        padding-bottom: 0.25em;
       }
 
       select#chair {
-        box-sizing: border-box;
         width: 100%;
-        color: variable.$black-chocolate;
+        margin-bottom: 1em;
         padding: 1em;
+        border-radius: 5px;
         border: none;
         background-color: variable.$golden-brown-form;
         font-family: variable.$body-font;
         font-size: 1em;
-        border-radius: 5px;
-        margin-bottom: 1em;
+        color: variable.$black-chocolate;
 
         &:focus {
           outline-color: variable.$black-chocolate;
@@ -155,9 +155,11 @@ main.waitlist {
       }
 
       p {
-        color: variable.$black-chocolate;
+        width: 100%;
+        margin-bottom: 1em;
         font-family: variable.$body-font;
         font-size: 1em;
+        color: variable.$black-chocolate;
         text-align: left;
         margin-bottom: 1em;
         width: 100%;
@@ -168,12 +170,12 @@ main.waitlist {
       }
 
       label.radio {
-        color: variable.$black-chocolate;
-        font-family: variable.$body-font;
-        font-size: 1em;
+        width: 100%;
         padding-right: 2em;
         margin-bottom: 1em;
-        width: 100%;
+        font-family: variable.$body-font;
+        font-size: 1em;
+        color: variable.$black-chocolate;
 
         @media (min-width: 768px){
           padding-right: 1em;
@@ -183,8 +185,8 @@ main.waitlist {
   }
 
     .text-area {
-      width: 100%;
       @include mixins.flex(flex-start, flex-start, wrap);
+      width: 100%;
 
       @media (min-width: 768px){
         width: 80%;
@@ -192,23 +194,22 @@ main.waitlist {
 
       label {
         width: 100%;
-        color: variable.$black-chocolate;
+        padding-bottom: 0.25em;
         font-family: variable.$body-font;
         font-size: 1em;
-        padding-bottom: 0.25em;
+        color: variable.$black-chocolate;
       }
 
       #comments {
-        box-sizing: border-box;
         width: 100%;
-        color: variable.$black-chocolate;
+        margin-bottom: 0.3125em;
         padding: 1em;
+        border-radius: 5px;
         border: none;
         background-color: variable.$golden-brown-form;
         font-family: variable.$body-font;
         font-size: 1em;
-        border-radius: 5px;
-        margin-bottom: 0.3125em;
+        color: variable.$black-chocolate;
 
         &::placeholder {
           color: variable.$alabaster;
@@ -222,14 +223,13 @@ main.waitlist {
   }
 
   input[type=submit] {
-    box-sizing: border-box;
-    color: variable.$black-chocolate;
     padding: 0.5em;
+    margin: 1em 0 0 0;
     border-radius: 5px;
     border: 1px solid variable.$black-chocolate;
     background-color: variable.$alabaster;
-    margin: 1em 0 0 0;
     font-family: variable.$body-font;
+    color: variable.$black-chocolate;
     font-size: .75em;
     font-weight: 700;
 

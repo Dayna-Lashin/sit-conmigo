@@ -4,7 +4,7 @@
 /* rgb(44, 39, 33) */
 /* rgb(238, 238, 232) */
 /* fonts */
-/* General Styles */
+/******************** General Styles ********************/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,9 +22,8 @@ body {
   /* base font size for ems */
 }
 
-/* HOME PAGE HEADER */
+/******************** HEADER ********************/
 header {
-  /*@include mixins.flex(space-between, center, wrap);*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,17 +47,17 @@ header figure {
   }
 }
 header .nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: column;
   width: 40%;
   position: absolute;
   right: 0;
   height: 25%;
   top: 10vh;
   background-color: #EEEEE8;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
-  align-content: flex-start;
-  flex-wrap: nowrap;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
   border-radius: 0 0 0 5px;
@@ -89,12 +88,11 @@ header .nav-links li {
 @media (min-width: 768px) {
   header .nav-links li {
     opacity: 1;
-    list-style-type: none;
   }
 }
 header .nav-links li a {
-  color: #86631D;
   text-decoration: none;
+  color: #86631D;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   text-align: right;
@@ -113,7 +111,6 @@ header .nav-links li a:hover {
 }
 header .menu-btn {
   position: relative;
-  /*@include mixins.flex(center, center, nowrap);*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,9 +125,9 @@ header .menu-btn {
   }
 }
 header .menu-btn .menu-btn_burger {
+  background-color: #86631D;
   width: 1.625em;
   height: 2px;
-  background-color: #86631D;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
 }
@@ -174,113 +171,114 @@ header .nav-active {
   }
 }
 
-/* PRODUCTS */
-main .products {
-  padding: 3.125em 1.25em 0 1.25em;
+/******************** CHAIR PAGE ********************/
+.chairs {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  padding: 3.125em 1.25em 0 1.25em;
   border-top: 1px solid rgba(134, 99, 29, 0.1);
 }
 @media (min-width: 768px) {
-  main .products {
+  .chairs {
     padding: 3.125em 0.5em 1.25em 0.5em;
     font-size: 18px;
   }
 }
-main .products h2.tag-line {
+.chairs h2.tag-line {
   max-width: 35ch;
-  text-align: center;
+  padding: 0 0.625em 2em 0.625em;
   font-family: "Roboto", sans-serif;
   font-size: 1.625em;
   line-height: 1.5em;
   color: #2C2721;
   font-weight: 400;
-  padding: 0 0.625em 2em 0.625em;
+  text-align: center;
 }
-main .products p.subtitle {
+.chairs p.subtitle {
   position: relative;
   z-index: 100;
-  color: #2C2721;
+  width: 100%;
+  padding: 0 1em;
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
+  color: #2C2721;
   line-height: 1.5em;
   font-weight: 200;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
-  width: 100%;
-  padding: 0 1em;
 }
 @media (min-width: 768px) {
-  main .products p.subtitle {
+  .chairs p.subtitle {
     width: 90%;
   }
 }
 @media (min-width: 1024px) {
-  main .products p.subtitle {
+  .chairs p.subtitle {
     width: 85%;
   }
 }
-main .products p.subtitle:before {
-  border-top: 1px solid rgba(134, 99, 29, 0.1);
-  content: "";
-  margin: 0 auto;
-  /* this centers the line to the full width specified */
+.chairs p.subtitle:before {
   position: absolute;
-  /* positioning must be absolute here, and relative positioning must be applied to the parent */
   top: 50%;
   left: 0;
   right: 0;
   bottom: 0;
   width: 95%;
+  margin: 0 auto;
   z-index: -100;
+  border-top: 1px solid rgba(134, 99, 29, 0.1);
+  content: "";
 }
-main .products p.subtitle span {
+.chairs p.subtitle span {
   background: #EEEEE8;
   padding-right: 0.3125em;
 }
-main .products .product-list {
+.chairs .chair-list {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  main .products .product-list {
+  .chairs .chair-list {
+    display: flex;
     justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
     font-size: 16px;
   }
 }
-main .products .product-list .chair-wrapper {
-  width: 90%;
+.chairs .chair-list .chair-wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 90%;
 }
 @media (min-width: 768px) {
-  main .products .product-list .chair-wrapper {
+  .chairs .chair-list .chair-wrapper {
     width: 45%;
     padding: 1em;
   }
 }
-main .products .product-list .chair-wrapper figure {
+.chairs .chair-list .chair-wrapper figure {
   width: 90%;
   padding-top: 1.25em;
 }
 @media (min-width: 1024px) {
-  main .products .product-list .chair-wrapper figure {
+  .chairs .chair-list .chair-wrapper figure {
     width: 70%;
   }
 }
-main .products .product-list .chair-wrapper figure a:hover {
+.chairs .chair-list .chair-wrapper figure a:hover {
   opacity: 0.5;
 }
-main .products .product-list .chair-wrapper figure a img.chair-img {
+.chairs .chair-list .chair-wrapper figure a img.chair-img {
   width: 100%;
   border-radius: 5px;
 }
-main .products .product-list .chair-wrapper .chair-info {
+.chairs .chair-list .chair-wrapper .chair-info {
   width: 90%;
   display: flex;
   justify-content: space-around;
@@ -288,62 +286,61 @@ main .products .product-list .chair-wrapper .chair-info {
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  main .products .product-list .chair-wrapper .chair-info {
+  .chairs .chair-list .chair-wrapper .chair-info {
     margin: 0 0.5em;
   }
 }
 @media (min-width: 1024px) {
-  main .products .product-list .chair-wrapper .chair-info {
+  .chairs .chair-list .chair-wrapper .chair-info {
     width: 70%;
   }
 }
-main .products .product-list .chair-wrapper .chair-info a.chair-name {
+.chairs .chair-list .chair-wrapper .chair-info a.chair-name {
   text-decoration: none;
   width: 50%;
   color: #2C2721;
 }
-main .products .product-list .chair-wrapper .chair-info a.chair-name:hover {
+.chairs .chair-list .chair-wrapper .chair-info a.chair-name:hover {
   text-decoration: underline;
 }
 @media (min-width: 768px) {
-  main .products .product-list .chair-wrapper .chair-info a.chair-name {
+  .chairs .chair-list .chair-wrapper .chair-info a.chair-name {
     width: 100%;
   }
 }
-main .products .product-list .chair-wrapper .chair-info a.chair-name h3 {
-  text-align: left;
+.chairs .chair-list .chair-wrapper .chair-info a.chair-name h3 {
+  margin: 0;
   font-family: "Overpass", sans-serif;
   font-size: 1.375em;
   color: #2C2721;
-  margin: 0;
+  text-align: left;
 }
-main .products .product-list .chair-wrapper .chair-info .chair-price {
+.chairs .chair-list .chair-wrapper .chair-info .chair-price {
   width: 50%;
-  text-align: right;
   padding-right: 0.5em;
-  color: #86631D;
-  font-size: 1em;
   font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: #86631D;
+  text-align: right;
 }
 @media (min-width: 768px) {
-  main .products .product-list .chair-wrapper .chair-info .chair-price {
+  .chairs .chair-list .chair-wrapper .chair-info .chair-price {
     width: 100%;
     text-align: left;
   }
 }
-main .products .product-list .chair-wrapper .chair-info .chair-description {
+.chairs .chair-list .chair-wrapper .chair-info .chair-description {
   width: 100%;
   padding: 0 0 1.875em 0;
-  text-align: left;
-  color: #2C2721;
   font-size: 1em;
   font-family: "Roboto", sans-serif;
   line-height: 1.5em;
+  color: #2C2721;
+  text-align: left;
 }
 
-/* Waitlist */
-main.waitlist {
-  background-color: #EEEEE8;
+/******************** PRE-ORDER FORM PAGE ********************/
+.pre-order {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -351,110 +348,113 @@ main.waitlist {
   width: 100%;
   padding: 2em 1.5em;
   border-top: 1px solid rgba(134, 99, 29, 0.1);
+  background-color: #EEEEE8;
 }
 @media (min-width: 768px) {
-  main.waitlist {
+  .pre-order {
     font-size: 18px;
   }
 }
-main.waitlist h2 {
+.pre-order h2 {
   width: 100%;
-  text-align: center;
+  padding-bottom: 0.5em;
   font-family: "Overpass", sans-serif;
   color: #2C2721;
   font-size: 1.625em;
-  padding-bottom: 0.5em;
-}
-main.waitlist p.subtitle {
-  width: 100%;
   text-align: center;
+}
+.pre-order p.subtitle {
+  width: 100%;
+  padding-bottom: 3.125em;
   font-family: "Roboto", sans-serif;
-  color: #2C2721;
   font-size: 1em;
+  color: #2C2721;
   line-height: 1.5em;
   font-weight: 300;
-  padding-bottom: 3.125em;
+  text-align: center;
 }
 @media (min-width: 768px) {
-  main.waitlist p.subtitle {
-    padding-bottom: 1.5em;
+  .pre-order p.subtitle {
     width: 80%;
+    padding-bottom: 1.5em;
   }
 }
-main.waitlist form.order-form {
-  width: 100%;
-  padding: 1em;
+.pre-order form.order-form {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 100%;
+  padding: 1em;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form {
+  .pre-order form.order-form {
     font-size: 16px;
   }
 }
-main.waitlist form.order-form .text {
-  width: 100%;
+.pre-order form.order-form .text {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-}
-main.waitlist form.order-form .text .text-wrapper {
   width: 100%;
+}
+.pre-order form.order-form .text .text-wrapper {
   display: flex;
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .text .text-wrapper {
+  .pre-order form.order-form .text .text-wrapper {
     width: 80%;
   }
 }
 @media (min-width: 1024px) {
-  main.waitlist form.order-form .text .text-wrapper {
+  .pre-order form.order-form .text .text-wrapper {
     width: 45%;
+    display: flex;
     justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: wrap;
   }
 }
-main.waitlist form.order-form .text .text-wrapper label {
+.pre-order form.order-form .text .text-wrapper label {
   width: 100%;
-  color: #2C2721;
+  padding-bottom: 0.25em;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  padding-bottom: 0.25em;
+  color: #2C2721;
 }
 @media (min-width: 1024px) {
-  main.waitlist form.order-form .text .text-wrapper label {
+  .pre-order form.order-form .text .text-wrapper label {
     width: 80%;
   }
 }
-main.waitlist form.order-form .text .text-wrapper input[type=text] {
-  box-sizing: border-box;
+.pre-order form.order-form .text .text-wrapper input[type=text] {
   width: 100%;
-  color: #2C2721;
   padding: 0.625em;
+  margin-bottom: 1em;
+  border-radius: 0.3125em;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  border-radius: 0.3125em;
-  margin-bottom: 1em;
+  color: #2C2721;
 }
-main.waitlist form.order-form .text .text-wrapper input[type=text]::placeholder {
+.pre-order form.order-form .text .text-wrapper input[type=text]::placeholder {
   color: #EEEEE8;
 }
-main.waitlist form.order-form .text .text-wrapper input[type=text]:focus {
+.pre-order form.order-form .text .text-wrapper input[type=text]:focus {
   outline-color: #2C2721;
 }
 @media (min-width: 1024px) {
-  main.waitlist form.order-form .text .text-wrapper input[type=text] {
+  .pre-order form.order-form .text .text-wrapper input[type=text] {
     width: 80%;
   }
 }
-main.waitlist form.order-form .alt-wrapper {
+.pre-order form.order-form .wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -462,145 +462,147 @@ main.waitlist form.order-form .alt-wrapper {
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .alt-wrapper {
-    width: 80%;
+  .pre-order form.order-form .wrapper {
+    display: flex;
     justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80%;
   }
 }
-main.waitlist form.order-form .alt-wrapper .drop-down {
+.pre-order form.order-form .wrapper .drop-down {
   width: 100%;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .alt-wrapper .drop-down {
+  .pre-order form.order-form .wrapper .drop-down {
     width: 45%;
   }
 }
-main.waitlist form.order-form .alt-wrapper .drop-down label {
+.pre-order form.order-form .wrapper .drop-down label {
   width: 100%;
+  padding-bottom: 0.25em;
   color: #2C2721;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  padding-bottom: 0.25em;
 }
-main.waitlist form.order-form .alt-wrapper .drop-down select#chair {
-  box-sizing: border-box;
+.pre-order form.order-form .wrapper .drop-down select#chair {
   width: 100%;
-  color: #2C2721;
+  margin-bottom: 1em;
   padding: 1em;
+  border-radius: 5px;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  border-radius: 5px;
-  margin-bottom: 1em;
+  color: #2C2721;
 }
-main.waitlist form.order-form .alt-wrapper .drop-down select#chair:focus {
+.pre-order form.order-form .wrapper .drop-down select#chair:focus {
   outline-color: #2C2721;
 }
-main.waitlist form.order-form .alt-wrapper .check-box {
+.pre-order form.order-form .wrapper .check-box {
   width: 100%;
   margin-bottom: 1em;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .alt-wrapper .check-box {
+  .pre-order form.order-form .wrapper .check-box {
     width: 45%;
     text-align: center;
   }
 }
-main.waitlist form.order-form .alt-wrapper .check-box p {
-  color: #2C2721;
+.pre-order form.order-form .wrapper .check-box p {
+  width: 100%;
+  margin-bottom: 1em;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
+  color: #2C2721;
   text-align: left;
   margin-bottom: 1em;
   width: 100%;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .alt-wrapper .check-box p {
+  .pre-order form.order-form .wrapper .check-box p {
     text-align: center;
   }
 }
-main.waitlist form.order-form .alt-wrapper .check-box label.radio {
-  color: #2C2721;
-  font-family: "Roboto", sans-serif;
-  font-size: 1em;
+.pre-order form.order-form .wrapper .check-box label.radio {
+  width: 100%;
   padding-right: 2em;
   margin-bottom: 1em;
-  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: #2C2721;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .alt-wrapper .check-box label.radio {
+  .pre-order form.order-form .wrapper .check-box label.radio {
     padding-right: 1em;
   }
 }
-main.waitlist form.order-form .text-area {
-  width: 100%;
+.pre-order form.order-form .text-area {
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media (min-width: 768px) {
-  main.waitlist form.order-form .text-area {
+  .pre-order form.order-form .text-area {
     width: 80%;
   }
 }
-main.waitlist form.order-form .text-area label {
+.pre-order form.order-form .text-area label {
   width: 100%;
-  color: #2C2721;
+  padding-bottom: 0.25em;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  padding-bottom: 0.25em;
-}
-main.waitlist form.order-form .text-area #comments {
-  box-sizing: border-box;
-  width: 100%;
   color: #2C2721;
+}
+.pre-order form.order-form .text-area #comments {
+  width: 100%;
+  margin-bottom: 0.3125em;
   padding: 1em;
+  border-radius: 5px;
   border: none;
   background-color: rgba(134, 99, 29, 0.3);
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  border-radius: 5px;
-  margin-bottom: 0.3125em;
+  color: #2C2721;
 }
-main.waitlist form.order-form .text-area #comments::placeholder {
+.pre-order form.order-form .text-area #comments::placeholder {
   color: #EEEEE8;
 }
-main.waitlist form.order-form .text-area #comments:focus {
+.pre-order form.order-form .text-area #comments:focus {
   outline-color: #2C2721;
 }
-main.waitlist input[type=submit] {
-  box-sizing: border-box;
-  color: #2C2721;
+.pre-order input[type=submit] {
   padding: 0.5em;
+  margin: 1em 0 0 0;
   border-radius: 5px;
   border: 1px solid #2C2721;
   background-color: #EEEEE8;
-  margin: 1em 0 0 0;
   font-family: "Roboto", sans-serif;
+  color: #2C2721;
   font-size: 0.75em;
   font-weight: 700;
 }
-main.waitlist input[type=submit]:hover {
+.pre-order input[type=submit]:hover {
   background-color: #2C2721;
   color: #EEEEE8;
 }
-main.waitlist input[type=submit]:focus {
+.pre-order input[type=submit]:focus {
   outline-color: #2C2721;
 }
 
-/* Footer */
+/******************** Footer ********************/
 footer {
-  min-height: 10vh;
-  background-color: #86631D;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  min-height: 10vh;
   width: 100%;
   padding: 0em 1em;
   margin-top: 1em;
+  background-color: #86631D;
 }
 @media (min-width: 768px) {
   footer {
@@ -614,11 +616,11 @@ footer {
   }
 }
 footer .contact {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-content: flex-end;
   flex-wrap: nowrap;
+  width: 100%;
 }
 footer .contact .email {
   width: 50%;
@@ -647,8 +649,8 @@ footer .contact .icons a:hover {
   font-size: 125%;
 }
 
-/************ HOME PAGE ************/
-/* HERO SECTION */
+/******************** HOME PAGE ********************/
+/***** HERO SECTION *****/
 section.hero {
   display: flex;
   justify-content: center;
@@ -664,7 +666,7 @@ section.hero {
 }
 @media (min-width: 768px) {
   section.hero {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -698,56 +700,54 @@ section.hero {
   line-height: 1.5em;
 }
 
-/* about */
+/***** about *****/
 .about {
   min-height: 50vh;
   padding: 3em 2em;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .about {
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .about {
+    font-size: 20px;
   }
 }
 .about .mission-content {
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  .about .mission-content {
-    display: flex;
-    justify-content: center;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-  }
-}
-.about .mission-content .col {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.about .mission-content .col {
+  max-width: 65ch;
+}
+@media (min-width: 768px) {
+  .about .mission-content .col {
+    max-width: 75ch;
+  }
 }
 @media (min-width: 1024px) {
   .about .mission-content .col {
-    width: calc(100/3);
+    max-width: 85ch;
   }
 }
 .about .mission-content .col p {
   text-align: left;
+  height: auto;
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   line-height: 1.5em;
   color: #2C2721;
   padding: 0.625em;
-}
-@media (min-width: 1024px) {
-  .about .mission-content .col p {
-    width: 80%;
-  }
 }
 .about .mission-content .col p span {
   font-size: 125%;
@@ -756,15 +756,15 @@ section.hero {
   font-family: "Overpass", sans-serif;
 }
 
-/* FIRST IMAGE SECTION */
+/***** FIRST IMAGE *****/
 .img-2 {
-  background-image: url("../img/red-pattern.jpg");
   height: 100vh;
+  width: 100%;
+  background-image: url("../img/red-pattern.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
-  width: 100%;
   background-attachment: fixed;
 }
 @media (min-width: 768px) {
@@ -774,7 +774,7 @@ section.hero {
   }
 }
 
-/* CALL TO ACTION SECTION */
+/***** CALL TO ACTION SECTION *****/
 .call-to-action {
   min-height: 50vh;
   display: flex;
@@ -796,32 +796,32 @@ section.hero {
   flex-wrap: wrap;
 }
 .call-to-action .call-to-action-text h2 {
-  text-align: center;
+  width: 100%;
   font-family: "Overpass", sans-serif;
   font-size: 1.625em;
-  width: 100%;
   color: #2C2721;
+  text-align: center;
 }
 .call-to-action .call-to-action-text p {
   width: 85%;
-  text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1.125em;
   line-height: 1.625em;
   color: #2C2721;
+  text-align: center;
 }
 .call-to-action a {
+  width: 125px;
   padding: 0.625em 0.3125em;
+  margin: 0.625em 0 1.25em 0;
   border: 2px ridge #86631D;
   border-radius: 5px;
-  font-size: 1em;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
   font-weight: 700;
   color: #86631D;
-  margin: 0.625em 0 1.25em 0;
-  font-family: "Roboto", sans-serif;
   text-align: center;
-  width: 125px;
   text-transform: uppercase;
 }
 .call-to-action a:hover {
@@ -839,15 +839,15 @@ section.hero {
   }
 }
 
-/* SECOND IMAGE SECTION */
+/***** SECOND IMAGE SECTION *****/
 .img-3 {
-  background-image: url("../img/white-full.jpg");
   height: 100vh;
+  width: 100%;
+  background-image: url("../img/white-full.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  width: 100%;
   background-attachment: fixed;
 }
 @media (min-width: 768px) {
@@ -857,7 +857,7 @@ section.hero {
   }
 }
 
-/* EMAIL FORM SECTION */
+/***** EMAIL FORM SECTION *****/
 .email-list {
   min-height: 50vh;
   display: flex;
@@ -884,16 +884,19 @@ section.hero {
 }
 @media (min-width: 1024px) {
   .email-list form {
-    width: 80%;
+    display: flex;
     justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80%;
   }
 }
 .email-list form .form-text {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .email-list form .form-text {
@@ -905,8 +908,8 @@ section.hero {
   width: 100%;
   text-align: left;
   font-family: "Overpass", sans-serif;
-  color: #2C2721;
   font-size: 1.375em;
+  color: #2C2721;
 }
 @media (min-width: 1024px) {
   .email-list form .form-text h3 {
@@ -915,13 +918,13 @@ section.hero {
 }
 .email-list form .form-text p {
   width: 100%;
-  text-align: left;
+  padding-bottom: 0.625em;
   font-family: "Roboto", sans-serif;
   color: #2C2721;
   font-size: 1em;
   line-height: 1.5em;
   font-weight: 300;
-  padding-bottom: 0.625em;
+  text-align: left;
 }
 @media (min-width: 1024px) {
   .email-list form .form-text p {
@@ -929,11 +932,11 @@ section.hero {
   }
 }
 .email-list form .form-inputs {
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .email-list form .form-inputs {
@@ -941,15 +944,14 @@ section.hero {
   }
 }
 .email-list form .form-inputs input[type=text] {
-  box-sizing: border-box;
-  color: #2C2721;
-  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
   border: none;
+  padding: 1em;
   background-color: rgba(134, 99, 29, 0.3);
   font-family: "Roboto", sans-serif;
   font-size: 1em;
-  border-radius: 5px;
-  width: 100%;
+  color: #2C2721;
 }
 .email-list form .form-inputs input[type=text]::placeholder {
   color: #EEEEE8;
@@ -963,16 +965,15 @@ section.hero {
   }
 }
 .email-list form .form-inputs input[type=submit] {
-  box-sizing: border-box;
-  color: #2C2721;
+  margin: 0.3125em 0 0 0;
   padding: 0.25em 0.5em;
   border-radius: 5px;
   border: 0.5px solid #2C2721;
   background-color: #EEEEE8;
-  margin: 0.3125em 0 0 0;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   font-weight: 500;
+  color: #2C2721;
 }
 .email-list form .form-inputs input[type=submit]:hover {
   background-color: #2C2721;

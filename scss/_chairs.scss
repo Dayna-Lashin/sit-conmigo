@@ -1,11 +1,12 @@
 @use 'variable';
 @use 'mixins';
 
-/* PRODUCTS */
 
-main .products {
-  padding: 3.125em 1.25em 0 1.25em;
+/******************** CHAIR PAGE ********************/
+
+.chairs {
   @include mixins.flex(center, center, wrap);
+  padding: 3.125em 1.25em 0 1.25em;
   border-top: 1px solid variable.$golden-brown-border;
 
   @media (min-width: 768px) {
@@ -15,26 +16,26 @@ main .products {
 
   h2.tag-line {
     max-width: 35ch;
-    text-align: center;
+    padding: 0 0.625em 2em 0.625em;
     font-family: variable.$body-font;
     font-size: 1.625em;
     line-height: 1.5em;
     color: variable.$black-chocolate;
     font-weight: 400;
-    padding: 0 0.625em 2em 0.625em;
+    text-align: center;
   }
 
   p.subtitle {
     position: relative;
     z-index: 100;
-    color: variable.$black-chocolate;
+    width: 100%;
+    padding: 0 1em;
+    font-family: variable.$body-font;
     font-size: 1em;
+    color: variable.$black-chocolate;
     line-height: 1.5em;
     font-weight: 200;
     text-transform: uppercase;
-    font-family: variable.$body-font;
-    width: 100%;
-    padding: 0 1em;
 
     @media (min-width: 768px) {
      width: 90%;
@@ -45,15 +46,13 @@ main .products {
     }
 
     &:before {
-      border-top: 1px solid variable.$golden-brown-border;
-      content:"";
-      margin: 0 auto;
-      /* this centers the line to the full width specified */
-      position: absolute;
-      /* positioning must be absolute here, and relative positioning must be applied to the parent */
+      position: absolute; //positioning must be absolute here, and relative positioning must be applied to the parent
       top: 50%; left: 0; right: 0; bottom: 0;
       width: 95%;
+      margin: 0 auto; //this centers the line to the full width specified
       z-index: -100;
+      border-top: 1px solid variable.$golden-brown-border;
+      content:"";
     }
 
     span {
@@ -62,17 +61,17 @@ main .products {
     }
   }
 
-  .product-list {
+  .chair-list {
     @include mixins.flex(center, center, wrap);
 
     @media (min-width: 768px) {
-      justify-content: space-around;
+      @include mixins.flex(space-around, center, wrap);
       font-size: 16px;
     }
 
     .chair-wrapper {
-      width: 90%;
       @include mixins.flex(center, center, wrap);
+      width: 90%;
 
       @media (min-width: 768px) {
         width: 45%;
@@ -126,21 +125,21 @@ main .products {
           }
 
           h3 {
-            text-align: left;
+            margin: 0;
             font-family: variable.$header-font;
             font-size: 1.375em;
             color: variable.$black-chocolate;
-            margin: 0;
+            text-align: left;
           }
         }
 
         .chair-price {
           width: 50%;
-          text-align: right;
           padding-right: 0.5em;
-          color: variable.$golden-brown;
-          font-size: 1em;
           font-family: variable.$body-font;
+          font-size: 1em;
+          color: variable.$golden-brown;
+          text-align: right;
 
           @media (min-width: 768px) {
             width: 100%;
@@ -151,11 +150,11 @@ main .products {
         .chair-description {
           width: 100%;
           padding: 0 0 1.875em 0;
-          text-align: left;
-          color: variable.$black-chocolate;
           font-size: 1em;
           font-family: variable.$body-font;
           line-height: 1.5em;
+          color: variable.$black-chocolate;
+          text-align: left;
         }
       }
     }

@@ -1,14 +1,16 @@
 @use 'variable';
 @use 'mixins';
 
-/* Footer */
+
+/******************** Footer ********************/
+
 footer {
-  min-height: 10vh;
-  background-color: variable.$golden-brown;
   @include mixins.flex(center, center, wrap);
+  min-height: 10vh;
   width: 100%;
   padding: 0em 1em;
   margin-top: 1em;
+  background-color: variable.$golden-brown;
 
   @media (min-width: 768px) {
     font-size: 18px;
@@ -20,8 +22,8 @@ footer {
   }
 
   .contact {
-    width: 100%;
     @include mixins.flex(space-between, flex-end, nowrap);
+    width: 100%;
 
     .email {
       width: 50%;
@@ -33,7 +35,6 @@ footer {
 
         p {
           font-family: variable.$body-font;
-
         }
       }
     }
