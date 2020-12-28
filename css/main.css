@@ -675,6 +675,7 @@ section.hero {
   height: 100vh;
   background-image: url("../img/jade-rectangle.jpg");
   -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -782,14 +783,15 @@ section.hero {
   width: 100%;
   background-image: url("../img/patterned-chairs-full-crop.jpg");
   -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
-  background-attachment: fixed;
 }
 @media (min-width: 1024px) {
   .img-2 {
     background-position: center bottom;
+    background-attachment: fixed;
   }
 }
 
@@ -863,15 +865,16 @@ section.hero {
   width: 100%;
   background-image: url("../img/white-full.jpg");
   -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-attachment: fixed;
 }
 @media (min-width: 1024px) {
   .img-3 {
     background-image: url("../img/white-square.jpg");
     background-position: center center;
+    background-attachment: fixed;
   }
 }
 
